@@ -1,0 +1,52 @@
+	         | Brainstorming | Writing the document
+
+Arda Karaçal            YES                YES
+
+Önder Kemal Ceylan      YES                YES
+
+Baturalp Ýskenderoðlu   YES                YES
+
+Mustafa Umut Kaymaz     YES                YES
+
+
+Requirements Document
+
+
+
+Functional Requirements:
+
+
+	-The user must be able to search for restaurants
+
+	-The user must be able to select a food
+
+	-The user must be able to enter a location
+
+	-The user must be able to filter platforms
+
+	-The user must be able to pin restaurants
+
+	-The user must be able to select which coupons and/or codes to apply
+
+	-The user must be able to see the price after applying coupons and codes
+
+	-The user must be able to see restaurant ratings
+
+	-The user must be able to see approximate delivery time
+
+	-The user must be able to see restaurant categories
+
+
+Non-Functional Requirements:
+
+
+	-The system must have a easy to understand interface
+
+	-The system must work on Windows devices
+
+	-The system must be up to date
+
+	-The system must be quick enough
+
+	-The system must work seamlessly with different platforms
+

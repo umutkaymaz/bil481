@@ -1,0 +1,61 @@
+	         | Brainstorming | Writing the document
+
+Arda Karaçal            YES                YES
+
+Önder Kemal Ceylan      YES                YES
+
+Baturalp İskenderoğlu   YES                YES
+
+Mustafa Umut Kaymaz     YES                YES
+
+
+Project Scope:
+
+
+We do not want this applictation to be a competetor for other applications such as YemekSepeti or Getir. It will only aggregate prices from such applications.
+
+Project Organization:
+
+- Data Gathering Processes: Mustafa Umut Kaymaz
+
+- Data Management Processes: Arda Karaçal, Önder Kemal Ceylan, Baturalp İskenderoğlu
+
+- GUI Design and Implementation: All team members
+
+
+Objectives:
+
+
+- Implementation of a sufficient web-scraping algorithm to gather data from such platforms and management of them
+
+- Design of a comprehensive GUI for the application
+
+
+Key Phases and Timeline:
+
+- Gantt chart is included in the repository.
+
+
+Resource Planning:
+
+- Python: BeautifulSoup, Selenium, Pandas, PyQt
+
+
+Risk Management:
+
+- Team member leaving: Reassignment of tasks
+
+
+Communication Plan: 
+
+- Whatsapp, phone calls and weekly meetings
+
+
+Change Management Plan: 
+
+- Daily meetings
+
+
+Budget Plan: 
+
+- None

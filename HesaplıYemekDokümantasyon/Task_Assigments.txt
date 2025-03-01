@@ -1,0 +1,41 @@
+	         | Brainstorming | Writing the document
+
+Arda Karaçal            YES                YES
+
+Önder Kemal Ceylan      YES                YES
+
+Baturalp İskenderoğlu   YES                YES
+
+Mustafa Umut Kaymaz     YES                YES
+
+Team Members and Roles:
+
+	Umut Kaymaz - Project Manager, Developer
+	Arda Karaçal - Developer, Requirement Analyst
+	Önder Kemal Ceylan - Developer, Designer                                                                                                                                	Baturalp İskenderoğlu - Developer, Tester  
+
+ Task Matrix or Table:                                            Contributers
+
+1. Planning and Analysis Phase: 3 person-days			   Arda
+	Determining Requirements: 3 person-hour			   Arda, Umut, Baturalp, Önder
+
+
+2. Design Phase: 6 person-days					   Önder
+	Preparing the GUI Design: 5 person-hours		   Önder, Umut, Baturalp, Önder
+
+3. Development Phase: 27 person-days				   Umut
+	Web Scraping – Approximately 8-12 person-hour		   Umut, Arda
+	Data Processing – Approximately 12-16 Person-Hour	   Baturalp, Arda, Önder
+	GUI (User Interface) – Approximately 8-14 Person-Hour	   Umut, Önder
+
+4. Testing and Integration Phase: 25 person-days		   Baturalp
+	Unit Testing: Approximately 4-6 Person-Hour		   Baturalp, Umut, Arda, Önder
+	Integration Testing: Approximately 5-8 Person-Hour	   Baturalp
+
+5. Documentation Phase: 27 person-days				   Umut 
+	Final Documentation: Approximately 3 Person-Hour 	   Baturalp, Umut, Arda, Önder
+
+ Rationale for Task Assignment:
+
+During our meetings, we defined the requirements, and each group member selected the requirement from the dashboard that best suited their skills and interests. In order to ensure an equal distribution of workload, we assigned multiple participants to some sections. Therefore, even though each person is responsible for a specific phase, the tasks within each phase involve multiple participants.
+                                                                                                                              

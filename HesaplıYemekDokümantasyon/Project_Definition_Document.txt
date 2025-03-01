@@ -1,0 +1,75 @@
+	         | Brainstorming | Writing the document
+
+Arda Karaçal            YES                YES
+
+Önder Kemal Ceylan      YES                YES
+
+Baturalp İskenderoğlu   YES                YES
+
+Mustafa Umut Kaymaz     YES                YES
+
+
+Project Definition Document
+
+Project Name: HesaplıYemek
+
+Project Summary: 
+
+
+The purpose of this project is to develop an application that compares 
+the prices of same foods from same restaurants on different food applications to decide which one is the cheapiest.
+
+
+Objectives: 
+
+Finding the best alternative among the prices of the same product on different platforms by calculating the available and most optimal sales.
+
+
+Scope:
+
+We do not want this applictation to be a competetor for other applications such as YemekSepeti or Getir. It will only aggregate prices from such applications.
+
+
+Target Audience:
+
+Users of such applications
+
+
+Key Features:
+
+
+- Searching for specific restaurants and foods
+- Comparison of prices on different platforms
+- Sales/coupons filtering
+- Calculation of delivery costs
+- Calculation of average ratings of restaurants
+
+
+Deliverables:
+
+A program that is capable of executing the key features
+
+
+Budget:
+
+None
+
+
+Resources:
+
+4 computers
+Team members
+Python and it's libraries such as Pandas
+
+
+Risks and Mitigation Strategies:
+
+-Lack of suitable APIs for gathering data: We will implement web-scraping based solutions.
+
+
+Project Success Criteria:
+
+- Full implementation of all key features
+- At least %60 of users will find the application useful.
+- Real-life usefulness
+

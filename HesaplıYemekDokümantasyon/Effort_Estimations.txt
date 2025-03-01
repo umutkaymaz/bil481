@@ -1,0 +1,59 @@
+	         | Brainstorming | Writing the document
+
+Arda Karaçal            YES                YES
+
+Önder Kemal Ceylan      YES                YES
+
+Baturalp İskenderoğlu   YES                YES
+
+Mustafa Umut Kaymaz     YES                YES
+
+
+
+
+Effort Estimation for Each Phase:
+
+
+1. Planning and Analysis Phase: 3 person-days
+
+2. Design Phase: 6 person-days
+
+3. Development Phase: 27 person-days
+
+4. Testing and Integration Phase: 25 person-days
+
+5. Documentation Phase: 27 person-days
+
+We made our estimates using the analogy method by referencing similar projects. Because we are inexperienced, we allowed for a broader time range.
+
+
+
+Effort Estimation for per task:
+
+
+Determining Requirements: 3 person-hour
+
+Preparing the GUI Design: 5 person-hours  
+
+Web Scraping – Approximately 8-12 person-hour
+
+Data Processing – Approximately 12-16 Person-Hour
+
+GUI (User Interface) – Approximately 8-14 Person-Hour
+
+Unit Testing: Approximately 4-6 Person-Hour
+
+Integration Testing: Approximately 5-8 Person-Hour
+
+Final Documentation: Approximately 3 Person-Hour 
+
+
+
+Total Project Effort: 
+
+36 days (Due to Pipeline)
+ 
+
+
+
+
