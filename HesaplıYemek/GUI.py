@@ -6,6 +6,7 @@ import indirimhesabi  # İndirim hesaplamalari için modül
 
 MENU_DOSYA = "menu.csv"
 SECILEN_DOSYA = "secilen.csv"
+FAVORI_DOSYA = "favori.csv"  # Favori restoranlar için
 
 # Global veriler
 basket = {}      # { "yemek_adi": miktar }
@@ -75,13 +76,24 @@ def fetch_prices():
         menu_data[food] = prices
         tree.insert("", "end", values=(food, prices["Yemeksepeti"], prices["Getir"], prices["Trendyol"]))
     result_label.config(text=f"{restaurant}, {location} için sonuçlar")
+    
+    # Favori kontrolü: Eğer favori.csv'de bu restoran varsa, checkbox işaretlensin.
+    try:
+        fav_df = pd.read_csv(FAVORI_DOSYA)
+        if ((fav_df["Konum"] == location) & (fav_df["Restoran"] == restaurant)).any():
+            favorite_var.set(1)
+        else:
+            favorite_var.set(0)
+    except FileNotFoundError:
+        favorite_var.set(0)
+    
+    load_favorites()
 
 def on_tree_select(event):
     """Seçilen menü öğesinin adini, miktar kontrol alanina aktarir."""
     selected = tree.selection()
     if selected:
-        item = tree.item(selected[0])
-        food = item["values"][0]
+        food = tree.item(selected[0])["values"][0]
         selected_food_var.set(food)
         quantity_var.set(basket.get(food, 0))
 
@@ -98,11 +110,10 @@ def minus_action():
     if not food:
         return
     if basket.get(food, 0) > 0:
-        basket[food] = basket.get(food, 0) - 1
+        basket[food] -= 1
     quantity_var.set(basket.get(food, 0))
     update_basket_csv()
 
-# Checkbutton'larla indirim oranlarini ayarlama
 def update_discounts():
     global discount_yemeksepeti, discount_getir, discount_trendyol
     discount_yemeksepeti = 1 if var_joker.get() == 1 else 0.0
@@ -110,44 +121,82 @@ def update_discounts():
     discount_trendyol = 1 if var_flas.get() == 1 else 0.0
     update_summary()
 
+def toggle_favorite():
+    """Favori checkbox işaretlendiğinde veya kaldırıldığında favori.csv'yi günceller."""
+    location = location_entry.get().strip()
+    restaurant = restaurant_entry.get().strip()
+    if not location or not restaurant:
+        return
+    try:
+        df = pd.read_csv(FAVORI_DOSYA)
+    except FileNotFoundError:
+        df = pd.DataFrame(columns=["Konum", "Restoran"])
+    if favorite_var.get() == 1:  # Ekleme durumu
+        if not (((df["Konum"] == location) & (df["Restoran"] == restaurant)).any()):
+            new_row = pd.DataFrame([[location, restaurant]], columns=["Konum", "Restoran"])
+            df = pd.concat([df, new_row], ignore_index=True)
+    else:  # Kaldırma durumu
+        df = df[~((df["Konum"] == location) & (df["Restoran"] == restaurant))] 
+    df.to_csv(FAVORI_DOSYA, index=False)
+    load_favorites()
+
+def load_favorites():
+    """Favori.csv dosyasindaki favorileri liste kutusuna yükler."""
+    favorites_list.delete(0, tk.END)
+    try:
+        df = pd.read_csv(FAVORI_DOSYA)
+        for _, row in df.iterrows():
+            fav_entry = f"{row['Konum']} - {row['Restoran']}"
+            favorites_list.insert(tk.END, fav_entry)
+    except FileNotFoundError:
+        pass
+
+def favorites_select(event):
+    """Favoriler listesinde seçilen favoriyi alır ve konum ile restoran alanlarını doldurur."""
+    selection = favorites_list.curselection()
+    if selection:
+        fav = favorites_list.get(selection[0])
+        parts = fav.split(" - ")
+        if len(parts) == 2:
+            location_entry.delete(0, tk.END)
+            location_entry.insert(0, parts[0])
+            restaurant_entry.delete(0, tk.END)
+            restaurant_entry.insert(0, parts[1])
+            fetch_prices()
+
 def run_gui():
     global result_label, location_entry, restaurant_entry, tree, sepet_text, root
     global summary_yemeksepeti_label, summary_getir_label, summary_trendyol_label
-    global var_joker, var_tok, var_flas, selected_food_var, quantity_var
+    global var_joker, var_tok, var_flas, selected_food_var, quantity_var, favorite_var, favorites_list
 
     root = tk.Tk()
     root.title("HesapliYemek")
-    root.geometry("1100x800")
+    root.geometry("1200x800")
 
-    frame = ttk.Frame(root, padding=10)
-    frame.pack(fill=tk.BOTH, expand=True)
+    main_frame = ttk.Frame(root, padding=10)
+    main_frame.pack(fill=tk.BOTH, expand=True)
 
-    # Adres ve restoran girişleri
-    ttk.Label(frame, text="Adres:").grid(row=0, column=0, sticky=tk.W)
-    location_entry = ttk.Entry(frame)
+    # Sol üst: Giriş alanlari ve favori checkboxu
+    input_frame = ttk.Frame(main_frame, padding=10)
+    input_frame.grid(row=0, column=0, sticky="nw")
+    ttk.Label(input_frame, text="Adres:").grid(row=0, column=0, sticky=tk.W)
+    location_entry = ttk.Entry(input_frame)
     location_entry.grid(row=0, column=1, padx=5, pady=5)
-    ttk.Label(frame, text="Restoran:").grid(row=1, column=0, sticky=tk.W)
-    restaurant_entry = ttk.Entry(frame)
+    ttk.Label(input_frame, text="Restoran:").grid(row=1, column=0, sticky=tk.W)
+    restaurant_entry = ttk.Entry(input_frame)
     restaurant_entry.grid(row=1, column=1, padx=5, pady=5)
-
-    fetch_button = ttk.Button(frame, text="Fiyatlari Getir", command=fetch_prices)
+    favorite_var = tk.IntVar()
+    favorite_checkbox = ttk.Checkbutton(input_frame, text="Favorile", variable=favorite_var, command=toggle_favorite)
+    favorite_checkbox.grid(row=1, column=2, padx=5, pady=5)
+    fetch_button = ttk.Button(input_frame, text="Fiyatlari Getir", command=fetch_prices)
     fetch_button.grid(row=2, column=0, columnspan=2, pady=10)
+    result_label = ttk.Label(input_frame, text="", foreground="blue")
+    result_label.grid(row=3, column=0, columnspan=3)
 
-    # Checkbutton'larin bulunduğu alan (Fiyatlari Getir butonunun altinda)
-    discount_checkbox_frame = ttk.Frame(frame, padding=10)
-    discount_checkbox_frame.grid(row=3, column=0, columnspan=2, sticky="w")
-    var_joker = tk.IntVar()
-    var_tok = tk.IntVar()
-    var_flas = tk.IntVar()
-    ttk.Checkbutton(discount_checkbox_frame, text="joker", variable=var_joker, command=update_discounts).pack(side=tk.LEFT, padx=5)
-    ttk.Checkbutton(discount_checkbox_frame, text="tok", variable=var_tok, command=update_discounts).pack(side=tk.LEFT, padx=5)
-    ttk.Checkbutton(discount_checkbox_frame, text="flaş", variable=var_flas, command=update_discounts).pack(side=tk.LEFT, padx=5)
-
-    result_label = ttk.Label(frame, text="", foreground="blue")
-    result_label.grid(row=4, column=0, columnspan=2)
-
-    # Treeview: Menü listesi
-    tree = ttk.Treeview(frame, columns=("Yemek", "YemekSepeti", "Getir", "Trendyol"), show="headings")
+    # Sol orta: Menü listesi ve miktar kontrol alanı
+    menu_frame = ttk.Frame(main_frame, padding=10)
+    menu_frame.grid(row=1, column=0, sticky="nw")
+    tree = ttk.Treeview(menu_frame, columns=("Yemek", "YemekSepeti", "Getir", "Trendyol"), show="headings")
     tree.heading("Yemek", text="Yemek")
     tree.heading("YemekSepeti", text="Yemeksepeti Fiyati")
     tree.heading("Getir", text="Getir Fiyati")
@@ -156,12 +205,10 @@ def run_gui():
     tree.column("YemekSepeti", width=120, anchor="center")
     tree.column("Getir", width=120, anchor="center")
     tree.column("Trendyol", width=120, anchor="center")
-    tree.grid(row=5, column=0, columnspan=2, pady=10, sticky="nsew")
+    tree.pack(pady=10)
     tree.bind("<<TreeviewSelect>>", on_tree_select)
-
-    # Miktar kontrol alani: seçilen öğe adi, "-" butonu, miktar etiketi, "+" butonu
-    quantity_frame = ttk.Frame(frame, padding=10)
-    quantity_frame.grid(row=6, column=0, columnspan=2, sticky="w")
+    quantity_frame = ttk.Frame(menu_frame, padding=10)
+    quantity_frame.pack(fill=tk.X)
     ttk.Label(quantity_frame, text="Seçilen Yemek:").pack(side=tk.LEFT)
     selected_food_var = tk.StringVar()
     ttk.Label(quantity_frame, textvariable=selected_food_var, width=20).pack(side=tk.LEFT, padx=5)
@@ -169,16 +216,20 @@ def run_gui():
     quantity_var = tk.IntVar(value=0)
     ttk.Label(quantity_frame, textvariable=quantity_var, width=5).pack(side=tk.LEFT, padx=5)
     ttk.Button(quantity_frame, text="+", command=plus_action, width=3).pack(side=tk.LEFT)
-
-    # Sepet gösterimi (basket listesi)
-    sepet_label = ttk.Label(frame, text="Sepet (Yemek: Miktar):")
-    sepet_label.grid(row=7, column=0, sticky=tk.W)
     sepet_text = tk.StringVar()
-    ttk.Label(frame, textvariable=sepet_text, foreground="green").grid(row=7, column=1, sticky=tk.W)
+    ttk.Label(menu_frame, textvariable=sepet_text, foreground="green").pack()
 
-    # Özet (Summary) alani
-    summary_frame = ttk.Frame(frame, padding=10)
-    summary_frame.grid(row=8, column=0, columnspan=2, sticky="nsew")
+    # Sol alt: Özet (Summary) ve indirim checkbutton'lari
+    summary_frame = ttk.Frame(main_frame, padding=10)
+    summary_frame.grid(row=2, column=0, sticky="nw")
+    var_joker = tk.IntVar()
+    var_tok = tk.IntVar()
+    var_flas = tk.IntVar()
+    discount_checkbox_frame = ttk.Frame(summary_frame, padding=10)
+    discount_checkbox_frame.pack(anchor="w")
+    ttk.Checkbutton(discount_checkbox_frame, text="joker", variable=var_joker, command=update_discounts).pack(side=tk.LEFT, padx=5)
+    ttk.Checkbutton(discount_checkbox_frame, text="tok", variable=var_tok, command=update_discounts).pack(side=tk.LEFT, padx=5)
+    ttk.Checkbutton(discount_checkbox_frame, text="flaş", variable=var_flas, command=update_discounts).pack(side=tk.LEFT, padx=5)
     summary_yemeksepeti_label = ttk.Label(summary_frame, text="Yemeksepeti: Toplam 0 TL, İndirim 0 TL, İndirimli 0 TL", foreground="purple")
     summary_yemeksepeti_label.pack(anchor="w")
     summary_getir_label = ttk.Label(summary_frame, text="Getir: Toplam 0 TL, İndirim 0 TL, İndirimli 0 TL", foreground="purple")
@@ -186,6 +237,15 @@ def run_gui():
     summary_trendyol_label = ttk.Label(summary_frame, text="Trendyol: Toplam 0 TL, İndirim 0 TL, İndirimli 0 TL", foreground="purple")
     summary_trendyol_label.pack(anchor="w")
 
+    # Sağ tarafta: Favoriler listesi (Favoriler) - Favori restoranlar burada görünecek
+    favorites_frame = ttk.Frame(main_frame, padding=10)
+    favorites_frame.grid(row=0, column=1, rowspan=3, sticky="n")
+    ttk.Label(favorites_frame, text="Favoriler", foreground="brown").pack()
+    favorites_list = tk.Listbox(favorites_frame, width=30, height=20)
+    favorites_list.pack(padx=5, pady=5)
+    favorites_list.bind("<<ListboxSelect>>", favorites_select)
+    load_favorites()
+    
     guncelle_sepet()
 
     def on_closing():
@@ -198,3 +258,4 @@ def run_gui():
 
 if __name__ == "__main__":
     run_gui()
+
