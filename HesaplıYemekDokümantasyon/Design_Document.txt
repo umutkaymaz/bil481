@@ -8,7 +8,32 @@ Baturalp İskenderoğlu   YES                YES
 
 Mustafa Umut Kaymaz     YES                YES
 
+Table of Contents
+	
+	System Overview
 
+		Brief Project Description
+		Goals
+		System Architecture
+		Technology Stack
+	
+	Implementation Details
+
+		Codebase Structure
+		Key Implementations
+		Component Interfaces
+		Visual Interfaces
+	
+	Use Case Support in Design
+
+		Use Case Selection
+		Requirement Mapping
+		Use Case Design
+	
+	Design Decisions
+
+		Technology Comparisons
+		Decision Justifications
 
 1. System Overview
 
@@ -38,7 +63,7 @@ Technology Stack:
 
 	Data processing: Pandas
 
-	Frontend/GUI: Python
+	Frontend/GUI: Python tkinter module
 
 	Version Control & Collaboration: GitHub 
 
@@ -46,39 +71,59 @@ Technology Stack:
 
 Codebase Structure:
 	Folders: 
-		/scrapers: Contains modules for fetching data from each platform.
-		/processors: Modules for data normalization and price comparison algorithms.
-		/gui: Contains files responsible for the graphical user interface.
-		/tests: Automated test scripts for unit and integration tests.
+		/HesaplıYemek: Every module and .csv file in the program will be in HesaplıYemek folder
 	Modules:
-		Web_scraping.py
-		data_processing.py
-		test.py
-		GUI.py
-		hesaplı_yemek_main.py
+		Web_scraping.py: 
+		indirimhesabı.py: 
+		test.py: 
+		GUI.py: 
+		main.py:
 
 Key Implementations:
 	Web_scraping.py: The module that implements web scraping from different platforms, stores the data in .csv files
  
-	data_processing.py: The module that takes  .csv files as input and finding cheapest food, provide output for GUI.py
+	indirimhesabı.py: The module that takes  .csv files as input and finding cheapest food, provide output for GUI.py
 
-	test.py: The module that implements test methods
+	test.py: The module that implements test methods and provides automated test for function by using pytest module
 
 	GUI.py: The module that implements User Interface
 
-	hesaplı_yemek_main.py: The main file that runs the program 
+	main.py The main file that runs the program 
 
 Component Interfaces:
-	Scraper Module Interface:
-	fetch_product_data(platform_url: str) -> dict
- 	Processor Module Interface:
-  	normalize_data(raw_data: dict) -> dict
-  	compare_prices(normalized_data: list) -> dict
- 	GUI Module Interface:
-  	display_results(comparison_result: dict) -> None
+GUI Components
+
+	run_gui(): Ana GUI uygulamasını başlatır ve bileşenleri ekler.
+
+	fiyatlari_getir(): Kullanıcının girdiği adres ve restoran bilgisine göre menü fiyatlarını getirir.
+
+	favori_sec(event): Seçilen favoriyi alıp konum ve restoran giriş alanlarını otomatik olarak doldurur.
+
+Data Management
+
+	secilen_csv_guncelle(): Sepete eklenen yemekleri güncelleyerek secilen.csv dosyasına kaydeder.
+
+	guncelle_sepet(): Sepet içeriğini günceller ve GUI’ye yansıtır.
+
+	fiyatlari_hesapla(): Sepetteki ürünlerin toplam fiyatlarını hesaplar.
+
+Discount Calculation
+
+	indirim_guncelle(): Kullanıcının seçtiği indirimleri uygular ve fiyat hesaplamasını günceller.
+	hesapla_indirim(toplam_fiyat, joker, site):Verilen toplam fiyata göre indirim miktarını ve indirimli fiyatı hesaplar.
+    
+
+Favorites Handling
+
+	favori_guncelle(): Favori restoranların favori.csv dosyasına kaydedilmesini sağlar.
+
+	favorileri_yaz(): favori.csv dosyasındaki favorileri liste kutusuna yükler.
+
+Web_Scraping
+	fetch_data(): Webden aldığı verileri local'de .csv formatında depolar
 
 Visual Interfaces:
-	Include wireframes or screenshots of user interfaces.
+	Screenshots are added.
 
 3. Use Case Support in Design
 

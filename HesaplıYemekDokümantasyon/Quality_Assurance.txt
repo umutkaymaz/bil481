@@ -1,3 +1,56 @@
+	         | Brainstorming | Writing the document
+
+Arda Karaçal            YES                YES
+
+Önder Kemal Ceylan      YES                YES
+
+Baturalp İskenderoğlu   YES                YES
+
+Mustafa Umut Kaymaz     YES                YES
+
+
+
+Table of Contents
+
+	Quality Assurance Strategy
+
+		Overview
+
+		Testing Methodologies
+
+			Unit Testing
+
+			Integration Testing
+
+			Validation Testing
+
+			Usability Testing
+
+			Performance Testing
+
+			Acceptance Testing
+
+		Automated vs. Manual Testing
+
+	Quality Factors & Metrics
+
+		Performance
+
+		Usability
+
+		Scalability
+
+		Maintainability
+
+	Test Plan
+
+		Test Cases
+
+		Bug Tracking
+
+
+
+
 1. Quality Assurance Strategy
 
 Overview:
@@ -10,7 +63,7 @@ Code reviews, test cases, documentation and user/developer feedback will be used
 
 2) Continuous Improvement:
 
-Tests will be regulary updated and issuses will be fixed ass the project continues and more code is written.
+Tests will be regulary updated and issuses will be fixed as the project continues and more code is written.
 
 
 Testing Methodologies:
@@ -41,8 +94,8 @@ The final validation where stakeholders(in this case it is the instructor) verif
 
 Automated vs. Manual Testing:
 
--Automated Testing: Every module in the project other than run_gui will be tested by pytest
--Manual Testing: run_gui and modules that's directly about GUI
+-Automated Testing: Every module in the project function other than run_gui() function will be tested by testX.py(e.g. test.py, test1.py, test2.py) modules and each module will use pytest library for automated test
+-Manual Testing: run_gui() function and relevant functions with GUI will be tested manually
 
 
 
@@ -55,7 +108,9 @@ Performance             	The haste and efficiency of how the	  Average time for 
 		        	system processes comparisons and loads	  
 				data				  
 
-Usability	        	The ease of the users navigating 	  User satisfaction gathered with feedback				  		and understanding the interface           and/or surveys 
+Usability	        	The ease of the users navigating 	  User satisfaction gathered with feedback				  		
+				and understanding the interface 
+				and/or surveys 
 								  	
 Scalability   	        	The ability to handle increased load	  Testing results of changed inputs, Performance 
 				or larger/changed dataframes		  under stress					
