@@ -1,0 +1,184 @@
+	         | Brainstorming | Writing the document
+
+Arda Karaçal            YES                YES
+
+Önder Kemal Ceylan      YES                YES
+
+Baturalp İskenderoğlu   YES                YES
+
+Mustafa Umut Kaymaz     YES                YES
+
+
+
+1. System Overview
+
+Brief Project Description:
+
+	- Verilen restoranın menüsünü kullanıcıya sunmak ve seçili yemeğin en ucuz olduğu uygulamayı bulmak.
+
+	Goals: 
+		
+	- Scrape the data from web and storing it in .csv files
+	- Processing the data and find the cheapest food
+	- Providing a basic GUI to user
+
+System Architecture:
+
+	Moduler Monolitic Architecture
+
+Technology Stack:
+
+	Text Editor: Vs Code
+
+	Backend & Scripting: Python
+
+	Web scraping libraries: Python request module and Beautifulsoup
+	
+	Databases: 
+
+	Data processing: Pandas
+
+	Frontend/GUI: Python
+
+	Version Control & Collaboration: GitHub 
+
+2. Implementation Details
+
+Codebase Structure:
+	Folders: 
+		/scrapers: Contains modules for fetching data from each platform.
+		/processors: Modules for data normalization and price comparison algorithms.
+		/gui: Contains files responsible for the graphical user interface.
+		/tests: Automated test scripts for unit and integration tests.
+	Modules:
+		Web_scraping.py
+		data_processing.py
+		test.py
+		GUI.py
+		hesaplı_yemek_main.py
+
+Key Implementations:
+	Web_scraping.py: The module that implements web scraping from different platforms, stores the data in .csv files
+ 
+	data_processing.py: The module that takes  .csv files as input and finding cheapest food, provide output for GUI.py
+
+	test.py: The module that implements test methods
+
+	GUI.py: The module that implements User Interface
+
+	hesaplı_yemek_main.py: The main file that runs the program 
+
+Component Interfaces:
+	Scraper Module Interface:
+	fetch_product_data(platform_url: str) -> dict
+ 	Processor Module Interface:
+  	normalize_data(raw_data: dict) -> dict
+  	compare_prices(normalized_data: list) -> dict
+ 	GUI Module Interface:
+  	display_results(comparison_result: dict) -> None
+
+Visual Interfaces:
+	Include wireframes or screenshots of user interfaces.
+
+3. Use Case Support in Design
+
+Use Case Selection:
+
+	Restoranlar sunulur
+	Yemekler sepete eklenir
+	Restoranlar favorilere kaydedilir.
+	Yemeklerin indirimli fiyatları sunulur.
+
+Requirement Mapping:
+	
+	Restoranların sunulması:
+		The user must be able to search for restaurants
+		The user must be able to enter a location
+	Yemeklerin sepete eklenmesi:
+		The user must be able to select a food
+	Restoranların favorilere kaydedilmesi:
+		The user must be able to pin restaurants
+	Yemeklerin indirimli fiyatları sunulması:
+		The user must be able to filter platforms
+		The user must be able to select which coupons and/or codes to apply
+		The user must be able to see the price after applying coupons and codes
+
+Use Case Design:
+	
+	System Architecture:
+	
+	Data Flow Explanation:
+		1) Web Scraping: Farklı restoran platformlarından Web_scraping.py modülü tarafından veri toplanır.
+		2) Veri Depolama: Toplanan veriler, .csv uzantılı dosyalar halinde saklanır.
+		3) Veri İşleme: data_processing.py dosyası, .csv dosyalarındaki veriyi girdi olarak alıp fiyat karşılaştırması yapar.
+		4) Sonuçların Gösterimi: İşlenmiş veriler, GUI.py tarafından kullanıcıya sunulur.
+	
+	State Explanation:
+	
+	Bekleme Durumu:
+		Sistem, kullanıcı girişini veya veri güncelleme isteğini bekler.
+	
+	Veri Toplama Durumu:
+
+		Kullanıcının arama yapmasıyla, web scraping süreci başlar.
+		Web Scraper modülü, ilgili platformlardan veri çeker.
+	
+	Veri İşleme Durumu:
+
+		Toplanan CSV verileri, normalize edilip fiyat karşılaştırması yapılır.
+		İşlem tamamlandığında, sonuçlar hazırlanır.
+	
+	Sonuç Görüntüleme Durumu:
+
+		İşlenmiş veriler, GUI aracılığıyla ekrana aktarılır.
+		Kullanıcı, sonuçları inceler ve gerekirse yeni sorgu başlatır.
+	
+	Test Durumu (Testing):
+
+		Otomatik test senaryoları (test.py) çalıştırılarak modüllerin beklenen şekilde işlediği doğrulanır.
+	
+
+
+4. Design Decisions
+
+Technology Comparisons:
+	
+1) Chosen:
+	
+Python’s requests module combined with BeautifulSoup for WebScraping.
+
+   Alternative: 
+
+Scrapy, which offers a more asynchronous framework for large-scale scraping.
+
+   Why BeautifulSoup? :
+
+For this project’s scope; finding restaurants, requesting menus from said restaurnats and BeautifulSoup are simpler to implement and maintain, while Scrapy might be more complex than needed for this project.
+
+
+2) Chosen:
+
+CSV files
+
+   Alternative:
+
+A relational database (e.g., SQLite)
+
+   Why CSV's? :
+
+CSV files integrate much easier with Pandas for data processing and are ideal for small to medium databases.A database, created by SQlite, would provide enhanced capabilities and data integrity but would add unnecessary complexity for a relatively small project
+
+
+Decision Justifications:
+
+-Database -> CSV:
+
+Easy to generate, require no additional setup, and works well with Pandas for data processing. 
+
+-Frameworks -> Python and It's Libraries (BeatifulSoup, Pandas, pytest, etc.):
+
+Well-suited for web scraping, data processing, and prototyping. (primarily because of BeatifulSoup and Pandas)
+
+-Architecture -> Modular Monolithic Architecture:
+
+Allows for clear separation of concerns such as scraping, processing, GUI, etc. within a single unit, easier to develop and debug compared to more complex microservices architectures

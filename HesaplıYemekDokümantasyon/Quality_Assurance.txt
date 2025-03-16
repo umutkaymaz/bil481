@@ -1,0 +1,86 @@
+1. Quality Assurance Strategy
+
+Overview:
+
+Testing and QA will be approached with the following 2 rules:
+
+1) Quality Practices:
+
+Code reviews, test cases, documentation and user/developer feedback will be used.
+
+2) Continuous Improvement:
+
+Tests will be regulary updated and issuses will be fixed ass the project continues and more code is written.
+
+
+Testing Methodologies:
+
+-Unit Testing:
+
+Testing individual methods,classes or functions seperately to ensure each part works as intended.
+
+-Integration Testing:
+
+Verifying that multiple modules or systems work together properly.
+
+-Validation Testing:
+
+Checking if critical test cases given by developers who wrote/know the code give the desired product.
+
+-Usability Testing:
+
+Evaluating the interface and overall user experience, ensuring the system is easy to navigate and understand.
+
+-Performance Testing:
+Measures the speed, responsiveness, and stability of the system to ensure it performs well in real-world scenarios.
+
+-Acceptance Testing:
+
+The final validation where stakeholders(in this case it is the instructor) verify that the complete system meets their needs and requirements before it’s launched.
+
+
+Automated vs. Manual Testing:
+
+-Automated Testing: Every module in the project other than run_gui will be tested by pytest
+-Manual Testing: run_gui and modules that's directly about GUI
+
+
+
+2. Quality Factors & Metrics
+
+
+Quality Factor	      		|	      Description	      	|	      	Measurement Metric	      	|
+
+Performance             	The haste and efficiency of how the	  Average time for system responses
+		        	system processes comparisons and loads	  
+				data				  
+
+Usability	        	The ease of the users navigating 	  User satisfaction gathered with feedback				  		and understanding the interface           and/or surveys 
+								  	
+Scalability   	        	The ability to handle increased load	  Testing results of changed inputs, Performance 
+				or larger/changed dataframes		  under stress					
+
+Maintainability     		The ease of updating and debugging the	  Code complexity score (e.g., Cyclomatic
+									  Complexity) system over time
+
+
+3. Test Plan
+
+Test Cases:
+
+NOT: Beklenen outputlar yani fiyatlar demo tarihine kadar değişebildiği için output almak için gereken adımlar yazıldı ve net bir fiyat yazılmadı...
+
+- TOBB Üniversitesinin Google Maps adresi, Öncü Döner, Tavuk Döner Menü x 1, Bütün platformlardaki indirim (varsa) uygulanmış fiyatların verilmesi (Expected -> MigrosYemek: 240.00 TL, Yemeksepeti: 200.00 TL, Getir: 239.90 TL)  
+
+- 1. test casedeki yemeğin miktarını arttırarak (x2, x3, vb.) farklı indirimler almak (Örneğin getirde bulunan tok indiriminin aktifleşmesi) (Expected -> Tavuk Döner Menü x 2 (Getir): 479.80 TL, Tok indirimiyle son fiyat: 329.80 TL)
+
+- 1. ve 2. test case'de test edilen kısımların başka restoranlarda test edilmesi (McDonalds, KFC, vb.)
+(Expected -> McDonalds, BigMac Menü => MigrosYemek: 325.00 TL, Yemeksepeti: 325.00 TL, Getir: 325.00 TL)
+
+- Testi yapılan restorandan birinin favori olarak eklenmesi ve sistemi tekrar çalıştırarak favorilerden istenen fiyatlara ulaşılması (Expected -> McDonalds için favori kutusunun işaretlenmesi ve favori.csv'de belirmesi)
+
+- Eklenen favorinin kaldırılması, sistemin tekrar çalıştırılması ve başka bir favorinin eklenmesi (Expected -> McDonalds'ın favori kutusuyla silinmesi ve Öncü Döner'in favorilere eklenmesi)  
+
+Bug Tracking:
+
+Bugs encountered will be reported to other developers who will track and fix the mentioned bug in Github or Whatsapp (both tracking and reporting will be done by these 2 apps, fixing and debugging will be done in VSCode or wherever the code was written)

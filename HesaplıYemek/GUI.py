@@ -57,17 +57,23 @@ def update_summary():
     summary_trendyol_label.config(text=f"Trendyol: Toplam {t_trendyol} TL, İndirim {disc_trendyol} TL, İndirimli {discounted_trendyol} TL")
 
 def fetch_prices():
+
+    # Fiyat getirme methodu.
+
     global menu_data
-    location = location_entry.get()
-    restaurant = restaurant_entry.get()
-    if not location or not restaurant:
+    yer = location_entry.get()
+    lokanta = restaurant_entry.get()
+
+    if not yer or not lokanta:
         result_label.config(text="Lütfen adres ve restoran giriniz.")
         return
+    
     try:
         df = pd.read_csv(MENU_DOSYA)
     except FileNotFoundError:
         result_label.config(text="menu.csv bulunamadi!")
         return
+    
     tree.delete(*tree.get_children())
     menu_data = {}
     for _, row in df.iterrows():
@@ -75,73 +81,89 @@ def fetch_prices():
         prices = {"food": food, "Yemeksepeti": row["Yemeksepeti"], "Getir": row["Getir"], "Trendyol": row["Trendyol"]}
         menu_data[food] = prices
         tree.insert("", "end", values=(food, prices["Yemeksepeti"], prices["Getir"], prices["Trendyol"]))
-    result_label.config(text=f"{restaurant}, {location} için sonuçlar")
+    result_label.config(text=f"{yer}, {lokanta} için sonuçlar")
     
-    # Favori kontrolü: Eğer favori.csv'de bu restoran varsa, checkbox işaretlensin.
+    # favori.csv'de bu restoran varsa, checkboxun isaretli olmasi.
+    
     try:
-        fav_df = pd.read_csv(FAVORI_DOSYA)
-        if ((fav_df["Konum"] == location) & (fav_df["Restoran"] == restaurant)).any():
+        favorite_df = pd.read_csv(FAVORI_DOSYA)
+        if ((favorite_df["Konum"] == yer) & (favorite_df["Restoran"] == lokanta)).any():
             favorite_var.set(1)
         else:
             favorite_var.set(0)
+
     except FileNotFoundError:
         favorite_var.set(0)
     
     load_favorites()
 
 def on_tree_select(event):
-    """Seçilen menü öğesinin adini, miktar kontrol alanina aktarir."""
-    selected = tree.selection()
-    if selected:
-        food = tree.item(selected[0])["values"][0]
+
+    # Secilen yemegi, miktar kontrol alanina aktarma.
+
+    secili = tree.selection()
+    if secili:
+        food = tree.item(secili[0])["values"][0]
         selected_food_var.set(food)
         quantity_var.set(basket.get(food, 0))
 
 def plus_action():
-    food = selected_food_var.get()
-    if not food:
+    yemek = selected_food_var.get()
+    if not yemek:
         return
-    basket[food] = basket.get(food, 0) + 1
-    quantity_var.set(basket[food])
+    basket[yemek] = basket.get(yemek, 0) + 1
+    quantity_var.set(basket[yemek])
     update_basket_csv()
 
 def minus_action():
-    food = selected_food_var.get()
-    if not food:
+    yemek = selected_food_var.get()
+    if not yemek:
         return
-    if basket.get(food, 0) > 0:
-        basket[food] -= 1
-    quantity_var.set(basket.get(food, 0))
+    if basket.get(yemek, 0) > 0:
+        basket[yemek] -= 1
+    quantity_var.set(basket.get(yemek, 0))
     update_basket_csv()
 
 def update_discounts():
-    global discount_yemeksepeti, discount_getir, discount_trendyol
-    discount_yemeksepeti = 1 if var_joker.get() == 1 else 0.0
-    discount_getir = 1 if var_tok.get() == 1 else 0.0
-    discount_trendyol = 1 if var_flas.get() == 1 else 0.0
+    global discount_yemeksepeti, discount_getir, discount_migros
+    # Indirim kontrolu
+    if var_joker.get() == 1:
+        discount_yemeksepeti = 1
+    else:
+        discount_yemeksepeti = 0
+
+    if var_tok.get() == 1:
+        discount_getir = 1
+    else:
+        discount_getir = 0
+
+    if var_flas.get() == 1:
+        discount_migros = 1
+    else:
+        discount_migros = 0    
     update_summary()
 
 def toggle_favorite():
-    """Favori checkbox işaretlendiğinde veya kaldırıldığında favori.csv'yi günceller."""
-    location = location_entry.get().strip()
-    restaurant = restaurant_entry.get().strip()
-    if not location or not restaurant:
+    # Favori checkbox'un durumuna gore favori.csv'yi günceller.
+    yer = location_entry.get().strip()
+    lokanta = restaurant_entry.get().strip()
+    if not yer or not lokanta:
         return
     try:
         df = pd.read_csv(FAVORI_DOSYA)
     except FileNotFoundError:
         df = pd.DataFrame(columns=["Konum", "Restoran"])
-    if favorite_var.get() == 1:  # Ekleme durumu
-        if not (((df["Konum"] == location) & (df["Restoran"] == restaurant)).any()):
-            new_row = pd.DataFrame([[location, restaurant]], columns=["Konum", "Restoran"])
+    if favorite_var.get() == 1:  # Ekleme
+        if not (((df["Konum"] == yer) & (df["Restoran"] == lokanta)).any()):
+            new_row = pd.DataFrame([[yer, lokanta]], columns=["Konum", "Restoran"])
             df = pd.concat([df, new_row], ignore_index=True)
-    else:  # Kaldırma durumu
-        df = df[~((df["Konum"] == location) & (df["Restoran"] == restaurant))] 
+    else:  # Kaldırma
+        df = df[~((df["Konum"] == yer) & (df["Restoran"] == lokanta))] 
     df.to_csv(FAVORI_DOSYA, index=False)
     load_favorites()
 
 def load_favorites():
-    """Favori.csv dosyasindaki favorileri liste kutusuna yükler."""
+    # Favori.csv dosyasindaki favorileri liste kutusuna yukleme.
     favorites_list.delete(0, tk.END)
     try:
         df = pd.read_csv(FAVORI_DOSYA)
@@ -152,10 +174,10 @@ def load_favorites():
         pass
 
 def favorites_select(event):
-    """Favoriler listesinde seçilen favoriyi alır ve konum ile restoran alanlarını doldurur."""
-    selection = favorites_list.curselection()
-    if selection:
-        fav = favorites_list.get(selection[0])
+    # Favoriler listesinde seçilen favoriyi alıp konumla restoran alanlarını otomatik dolurma.
+    secim = favorites_list.curselection()
+    if secim:
+        fav = favorites_list.get(secim[0])
         parts = fav.split(" - ")
         if len(parts) == 2:
             location_entry.delete(0, tk.END)
