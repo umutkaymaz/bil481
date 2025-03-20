@@ -1,10 +1,18 @@
+Task Matrix:
+Functional Requirements: Arda Karaçal, Mustafa Umut Kaymaz, Baturalp İskenderoğlu, Önder Kemal Ceylan
+Non-Functional Requirements: Arda Karaçal, Mustafa Umut Kaymaz, Baturalp İskenderoğlu, Önder Kemal Ceylan
+Effort Estimation for Each Phase: Arda Karaçal, Mustafa Umut Kaymaz, Baturalp İskenderoğlu, Önder Kemal Ceylan
+Total Project Effort: Arda Karaçal, Mustafa Umut Kaymaz, Baturalp İskenderoğlu, Önder Kemal Ceylan
+Task Assignments: Arda Karaçal, Mustafa Umut Kaymaz, Baturalp İskenderoğlu, Önder Kemal Ceylan
+Rationale for Task Assignment: Arda Karaçal, Mustafa Umut Kaymaz, Baturalp İskenderoğlu, Önder Kemal Ceylan
+
 	         | Brainstorming | Writing the document
 
-Arda Kara�al            YES                YES
+Arda Kara�al            YES                YES
 
-�nder Kemal Ceylan      YES                YES
+�nder Kemal Ceylan      YES                YES
 
-Baturalp �skendero�lu   YES                YES
+Baturalp �skendero�lu   YES                YES
 
 Mustafa Umut Kaymaz     YES                YES
 

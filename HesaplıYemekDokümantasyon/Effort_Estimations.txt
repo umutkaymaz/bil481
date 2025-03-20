@@ -1,3 +1,9 @@
+Task Matrix:
+Effort Estimation for Each Phase: Arda Karaçal, Mustafa Umut Kaymaz, Baturalp İskenderoğlu, Önder Kemal Ceylan
+Task-Level Effort Breakdown: Arda Karaçal, Mustafa Umut Kaymaz, Baturalp İskenderoğlu, Önder Kemal Ceylan
+Total Project Effort Calculation: Arda Karaçal, Mustafa Umut Kaymaz, Baturalp İskenderoğlu, Önder Kemal Ceylan
+Estimation Methodology Documentation (Assumptions & Rationale): Arda Karaçal, Mustafa Umut Kaymaz, Baturalp İskenderoğlu, Önder Kemal Ceylan
+
 	         | Brainstorming | Writing the document
 
 Arda Karaçal            YES                YES

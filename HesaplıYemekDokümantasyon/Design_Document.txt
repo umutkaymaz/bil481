@@ -1,3 +1,10 @@
+Task Matrix:
+System Overview: Arda Karaçal, Mustafa Umut Kaymaz, Baturalp İskenderoğlu, Önder Kemal Ceylan
+Implementation Details: Arda Karaçal, Mustafa Umut Kaymaz, Baturalp İskenderoğlu, Önder Kemal Ceylan
+Use Case Support in Design: Arda Karaçal, Mustafa Umut Kaymaz, Baturalp İskenderoğlu, Önder Kemal Ceylan
+Design Decisions: Arda Karaçal, Mustafa Umut Kaymaz, Baturalp İskenderoğlu, Önder Kemal Ceylan
+GitHub Commit Requirement: Arda Karaçal, Mustafa Umut Kaymaz, Baturalp İskenderoğlu, Önder Kemal Ceylan
+
 	         | Brainstorming | Writing the document
 
 Arda Karaçal            YES                YES

@@ -1,3 +1,9 @@
+Task Matrix:
+Task Assignments Overview: Arda Karaçal, Mustafa Umut Kaymaz, Baturalp İskenderoğlu, Önder Kemal Ceylan
+List of Tasks with Assigned Team Members: Arda Karaçal, Mustafa Umut Kaymaz, Baturalp İskenderoğlu, Önder Kemal Ceylan
+Roles and Responsibilities Mapping: Arda Karaçal, Mustafa Umut Kaymaz, Baturalp İskenderoğlu, Önder Kemal Ceylan
+Rationale for Task Assignment: Arda Karaçal, Mustafa Umut Kaymaz, Baturalp İskenderoğlu, Önder Kemal Ceylan
+
 	         | Brainstorming | Writing the document
 
 Arda Karaçal            YES                YES

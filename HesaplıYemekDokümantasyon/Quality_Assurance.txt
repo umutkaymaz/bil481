@@ -1,3 +1,8 @@
+Task Matrix:
+Quality Assurance Strategy: Arda Karaçal, Mustafa Umut Kaymaz, Baturalp İskenderoğlu, Önder Kemal Ceylan
+Quality Factors & Metrics: Arda Karaçal, Mustafa Umut Kaymaz, Baturalp İskenderoğlu, Önder Kemal Ceylan
+Test Plan: Arda Karaçal, Mustafa Umut Kaymaz, Baturalp İskenderoğlu, Önder Kemal Ceylan
+
 	         | Brainstorming | Writing the document
 
 Arda Karaçal            YES                YES
