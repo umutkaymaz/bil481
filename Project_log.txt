@@ -19,3 +19,6 @@ Web Scraping modülü
 Farklı restoranların farklı menüleri getirmesini sağlamak
 Karanlık mod eklenebilir(opsiyonel)
 Unit testler yazılmalı
+
+22 Mart 21.30
+fiyatlari_getir() GUI_actions.py'ye taşındı.

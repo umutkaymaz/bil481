@@ -96,18 +96,6 @@ def favorileri_yaz():
 
 
 
-def favori_sec(event):
-    """ Favoriler listesinde seçilen favoriyi alıp konumla restoran alanlarını otomatik doldurma. """
-    secim = GUI.favorites_list.curselection()
-    if secim:
-        fav = GUI.favorites_list.get(secim[0])
-        parts = fav.split(" - ")
-        if len(parts) == 2:
-            GUI.konum_girisi.delete(0, tk.END)
-            GUI.konum_girisi.insert(0, parts[0])
-            GUI.restoran_girisi.delete(0, tk.END)
-            GUI.restoran_girisi.insert(0, parts[1])
-            GUI.fiyatlari_getir()
 
 
 def favori_guncelle():
@@ -130,3 +118,61 @@ def favori_guncelle():
     favorileri_yaz()
 
 #---------------favorilerle alakalı kısım-----------------
+
+
+def fiyatlari_getir(menu_data : dict,favorite_var : tk.IntVar):
+
+    """ Fiyat getirme methodu. """
+
+    yer = GUI.konum_girisi.get()
+    lokanta = GUI.restoran_girisi.get()
+
+    if not yer or not lokanta:
+        GUI.sonucLabel.config(text="Lütfen adres ve restoran giriniz.")
+        return
+    
+    try:
+        df = pd.read_csv("menu.csv")
+    except FileNotFoundError:
+        GUI.sonucLabel.config(text="menu.csv bulunamadi!")
+        return
+    
+    GUI.menu.delete(*GUI.menu.get_children())
+
+    menu_data.clear()
+    
+    for _, row in df.iterrows():
+        food = row["food"]
+        prices = {"food": food, "Yemeksepeti": row["Yemeksepeti"], "Getir": row["Getir"], "MigrosYemek": row["MigrosYemek"]}
+        menu_data[food] = prices
+        GUI.menu.insert("", "end", values=(food, prices["Yemeksepeti"], prices["Getir"], prices["MigrosYemek"]))
+    
+    GUI.sonucLabel.config(text=f"{yer}, {lokanta} için sonuçlar")
+    
+    # "favori.csv"'de bu restoran varsa, checkboxun isaretli olmasi.
+    
+    try:
+        favorite_df = pd.read_csv("favori.csv")
+        if ((favorite_df["Konum"] == yer) & (favorite_df["Restoran"] == lokanta)).any():
+            favorite_var.set(1)
+        else:
+            favorite_var.set(0)
+
+    except FileNotFoundError:
+        favorite_var.set(0)
+    
+    favorileri_yaz()
+
+
+def favori_sec(event,menu_data:dict,favorite_var : tk.IntVar):
+    """ Favoriler listesinde seçilen favoriyi alıp konumla restoran alanlarını otomatik doldurma. """
+    secim = GUI.favorites_list.curselection()
+    if secim:
+        fav = GUI.favorites_list.get(secim[0])
+        parts = fav.split(" - ")
+        if len(parts) == 2:
+            GUI.konum_girisi.delete(0, tk.END)
+            GUI.konum_girisi.insert(0, parts[0])
+            GUI.restoran_girisi.delete(0, tk.END)
+            GUI.restoran_girisi.insert(0, parts[1])
+            fiyatlari_getir(menu_data,favorite_var)

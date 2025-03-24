@@ -8,6 +8,7 @@ from GUI_actions import yemek_sec
 from GUI_actions import favorileri_yaz
 from GUI_actions import favori_sec
 from GUI_actions import favori_guncelle
+from GUI_actions import fiyatlari_getir
 
 #run_GUI da oluşturduğum global değişkenleri (GUI elemanları (Labellar etc.)) 
 #diğer modüller tarafında erişilebilir kılıyorum   
@@ -16,53 +17,6 @@ from GUI_actions import favori_guncelle
 sepet = {}
 
 menu_data = {}   
-
-
-
-def fiyatlari_getir():
-
-    """ Fiyat getirme methodu. """
-
-    global menu_data
-    yer = konum_girisi.get()
-    lokanta = restoran_girisi.get()
-
-    if not yer or not lokanta:
-        sonucLabel.config(text="Lütfen adres ve restoran giriniz.")
-        return
-    
-    try:
-        df = pd.read_csv("menu.csv")
-    except FileNotFoundError:
-        sonucLabel.config(text="menu.csv bulunamadi!")
-        return
-    
-    menu.delete(*menu.get_children())
-
-    menu_data = {}
-    
-    for _, row in df.iterrows():
-        food = row["food"]
-        prices = {"food": food, "Yemeksepeti": row["Yemeksepeti"], "Getir": row["Getir"], "MigrosYemek": row["MigrosYemek"]}
-        menu_data[food] = prices
-        menu.insert("", "end", values=(food, prices["Yemeksepeti"], prices["Getir"], prices["MigrosYemek"]))
-    
-    sonucLabel.config(text=f"{yer}, {lokanta} için sonuçlar")
-    
-    # "favori.csv"'de bu restoran varsa, checkboxun isaretli olmasi.
-    
-    try:
-        favorite_df = pd.read_csv("favori.csv")
-        if ((favorite_df["Konum"] == yer) & (favorite_df["Restoran"] == lokanta)).any():
-            favorite_var.set(1)
-        else:
-            favorite_var.set(0)
-
-    except FileNotFoundError:
-        favorite_var.set(0)
-    
-    favorileri_yaz()
-
 
 
 def run_gui():
@@ -106,7 +60,7 @@ def run_gui():
     favori_checkbox.grid(row=1, column=2)
 
     #fiyatlari_getir() çağır
-    fiyatButonu = ttk.Button(input_frame, text="Fiyatlari Getir", command=fiyatlari_getir)
+    fiyatButonu = ttk.Button(input_frame, text="Fiyatlari Getir", command= lambda : fiyatlari_getir(menu_data,favorite_var))
     fiyatButonu.grid(row=2, column=0)
 
     #sonuç yazısı
@@ -228,7 +182,7 @@ def run_gui():
     favorites_list = tk.Listbox(favorites_frame, width=30, height=20)
     favorites_list.pack(padx=20)
     #favori secilince favori_sec methodunu çağır
-    favorites_list.bind("<<ListboxSelect>>", favori_sec)
+    favorites_list.bind("<<ListboxSelect>>", lambda event : favori_sec(event,menu_data,favorite_var))
     favorileri_yaz()
 
     def on_closing():
