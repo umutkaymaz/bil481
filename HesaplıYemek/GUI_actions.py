@@ -1,10 +1,68 @@
 import tkinter as tk
 from tkinter import ttk
 import pandas as pd
-import os
-from indirimhesabi import fiyatlari_hesapla
-import GUI
+import config
+from indirimhesabi import hesapla_indirim
 ##GUI daki değiskenleri aktardım
+#Sadece GUI'daki compenentları frame label, Entry, Treeview,checkboxlar gibi yapıları parametre olarak değil global değişken olarak aktardım.
+
+def fiyatlari_hesapla(joker_yemeksepeti, joker_getir, joker_migros, sepet : dict, menu_data : dict):
+    
+    """Sepetteki ürünlerin her site için toplam fiyati, indirim miktari ve indirimli fiyatini hesaplar.
+        Parametreler:
+        joker_yemeksepeti, joker_getir, joker_migros: ilgili platformda indirim varsa 1'e eşit aksi taktirde 0 değeri alir.
+        sepet: {yemek adi : yemek miktari} şeklinde kullacinin oluşturduğu sepeti tutar
+        menu_data: {"food": yemek adi, "Yemeksepeti": Yemeksepeti_fiyati , "Getir": Getir_fiyati, "MigrosYemek": MigrosYemek_fiyati}
+        yemeksepeti_fiyatlarLabel, getir_fiyatlarLabel, migrosYemek_fiyatlarLabel:
+             "Markalarin indirimsiz fiyatini , indirim miktarini ve indirimli fiyatini gösteren label'lar "
+
+        Ardindan bu değerleri label'larin text'ine yazar.
+
+        herhangi bir şey return etmez
+
+    """
+    
+    toplam_yemeksepeti = 0
+    toplam_getir = 0
+    toplam_MigrosYemek = 0
+
+    for food, miktar in sepet.items():
+        if food in menu_data:
+            prices = menu_data[food]
+            toplam_yemeksepeti += prices["Yemeksepeti"] * miktar
+            toplam_getir += prices["Getir"] * miktar
+            toplam_MigrosYemek += prices["MigrosYemek"] * miktar
+
+    toplam_fiyat_yemeksepeti, indirim_yemeksepeti, indirimli_yemeksepeti = hesapla_indirim(toplam_yemeksepeti, joker_yemeksepeti, 1)
+    toplam_fiyat_getir, indirim_getir, indirimli_getir = hesapla_indirim(toplam_getir, joker_getir, 2)
+    toplam_fiyat_migros, indirim_migros, indirimli_migros = hesapla_indirim(toplam_MigrosYemek, joker_migros, 3)
+
+    config.yemeksepeti_fiyatlarLabel.config(foreground="purple",text=f"Yemeksepeti: Toplam {toplam_fiyat_yemeksepeti} TL, İndirim {indirim_yemeksepeti} TL, İndirimli {indirimli_yemeksepeti} TL")
+    config.getir_fiyatlarLabel.config(foreground="purple",text=f"Getir: Toplam {toplam_fiyat_getir} TL, İndirim {indirim_getir} TL, İndirimli {indirimli_getir} TL")
+    config.migrosYemek_fiyatlarLabel.config(foreground="purple",text=f"MigrosYemek: Toplam {toplam_fiyat_migros} TL, İndirim {indirim_migros} TL, İndirimli {indirimli_migros} TL")
+
+    
+    fiyatList = {indirimli_yemeksepeti : "yemeksepeti", indirimli_getir: "getir",indirimli_migros: "migros"}
+    fiyatMin = float('inf') #sonsuz büyüklükte sayı atadım
+    appMin = ""
+    
+    for fiyat,app in fiyatList.items():
+        if(fiyatMin > fiyat):
+            fiyatMin = fiyat
+            appMin = app
+    
+    #en ucuzu kırmızı göster.
+    match appMin:
+        case "yemeksepeti":
+            config.yemeksepeti_fiyatlarLabel.config(foreground="red")
+        case "getir":
+            config.getir_fiyatlarLabel.config(foreground="red")
+        case "migros":
+            config.migrosYemek_fiyatlarLabel.config(foreground="red")
+        case  _:
+            print(appMin)
+
+
 
 def guncelle_sepet(sepet : dict, sepet_icerik : tk.StringVar):
     
@@ -72,9 +130,9 @@ def yemek_sec(event, sepet : dict, selected_food_var : tk.StringVar, miktar_var:
 
     """Secilen yemegi, miktar kontrol alanina aktarma.""" 
 
-    secili = GUI.menu.selection()
+    secili = config.menu.selection()
     if secili:
-        food = GUI.menu.item(secili[0])["values"][0]
+        food = config.menu.item(secili[0])["values"][0]
         selected_food_var.set(food)
         miktar_var.set(sepet.get(food, 0))
 
@@ -84,12 +142,12 @@ def yemek_sec(event, sepet : dict, selected_food_var : tk.StringVar, miktar_var:
 
 def favorileri_yaz():
     """ "favori.csv" dosyasindaki favorileri liste kutusuna yukleme."""
-    GUI.favorites_list.delete(0, tk.END)
+    config.favorites_list.delete(0, tk.END)
     try:
         df = pd.read_csv("favori.csv")
         for _, row in df.iterrows():
             fav_entry = f"{row['Konum']} - {row['Restoran']}"
-            GUI.favorites_list.insert(tk.END, fav_entry)
+            config.favorites_list.insert(tk.END, fav_entry)
     except FileNotFoundError:
         pass
 
@@ -100,15 +158,15 @@ def favorileri_yaz():
 
 def favori_guncelle():
     # Favori checkbox'un durumuna gore "favori.csv"'yi günceller.
-    yer = GUI.konum_girisi.get().strip()
-    lokanta = GUI.restoran_girisi.get().strip()
+    yer = config.konum_girisi.get().strip()
+    lokanta = config.restoran_girisi.get().strip()
     if not yer or not lokanta:
         return
     try:
         df = pd.read_csv("favori.csv")
     except FileNotFoundError:
         df = pd.DataFrame(columns=["Konum", "Restoran"])
-    if GUI.favorite_var.get() == 1:  # Ekleme checkbox isaretli ise eklenmis ya da yeni ekleniyor olmalı
+    if config.favorite_var.get() == 1:  # Ekleme checkbox isaretli ise eklenmis ya da yeni ekleniyor olmalı
         if not (((df["Konum"] == yer) & (df["Restoran"] == lokanta)).any()): #yoksa ekle
             new_row = pd.DataFrame([[yer, lokanta]], columns=["Konum", "Restoran"])
             df = pd.concat([df, new_row], ignore_index=True)
@@ -124,20 +182,20 @@ def fiyatlari_getir(menu_data : dict,favorite_var : tk.IntVar):
 
     """ Fiyat getirme methodu. """
 
-    yer = GUI.konum_girisi.get()
-    lokanta = GUI.restoran_girisi.get()
+    yer = config.konum_girisi.get()
+    lokanta = config.restoran_girisi.get()
 
     if not yer or not lokanta:
-        GUI.sonucLabel.config(text="Lütfen adres ve restoran giriniz.")
+        config.sonucLabel.config(text="Lütfen adres ve restoran giriniz.")
         return
     
     try:
         df = pd.read_csv("menu.csv")
     except FileNotFoundError:
-        GUI.sonucLabel.config(text="menu.csv bulunamadi!")
+        config.sonucLabel.config(text="menu.csv bulunamadi!")
         return
     
-    GUI.menu.delete(*GUI.menu.get_children())
+    config.menu.delete(*config.menu.get_children())
 
     menu_data.clear()
     
@@ -145,9 +203,9 @@ def fiyatlari_getir(menu_data : dict,favorite_var : tk.IntVar):
         food = row["food"]
         prices = {"food": food, "Yemeksepeti": row["Yemeksepeti"], "Getir": row["Getir"], "MigrosYemek": row["MigrosYemek"]}
         menu_data[food] = prices
-        GUI.menu.insert("", "end", values=(food, prices["Yemeksepeti"], prices["Getir"], prices["MigrosYemek"]))
+        config.menu.insert("", "end", values=(food, prices["Yemeksepeti"], prices["Getir"], prices["MigrosYemek"]))
     
-    GUI.sonucLabel.config(text=f"{yer}, {lokanta} için sonuçlar")
+    config.sonucLabel.config(text=f"{yer}, {lokanta} için sonuçlar")
     
     # "favori.csv"'de bu restoran varsa, checkboxun isaretli olmasi.
     
@@ -166,13 +224,13 @@ def fiyatlari_getir(menu_data : dict,favorite_var : tk.IntVar):
 
 def favori_sec(event,menu_data:dict,favorite_var : tk.IntVar):
     """ Favoriler listesinde seçilen favoriyi alıp konumla restoran alanlarını otomatik doldurma. """
-    secim = GUI.favorites_list.curselection()
+    secim = config.favorites_list.curselection()
     if secim:
-        fav = GUI.favorites_list.get(secim[0])
+        fav = config.favorites_list.get(secim[0])
         parts = fav.split(" - ")
         if len(parts) == 2:
-            GUI.konum_girisi.delete(0, tk.END)
-            GUI.konum_girisi.insert(0, parts[0])
-            GUI.restoran_girisi.delete(0, tk.END)
-            GUI.restoran_girisi.insert(0, parts[1])
+            config.konum_girisi.delete(0, tk.END)
+            config.konum_girisi.insert(0, parts[0])
+            config.restoran_girisi.delete(0, tk.END)
+            config.restoran_girisi.insert(0, parts[1])
             fiyatlari_getir(menu_data,favorite_var)
