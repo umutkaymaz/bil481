@@ -1,0 +1,21 @@
+24 Mart 2025 04.56
+
+GUI.py deki run_guı() hariç tüm fonksiyonlar GUI_actions.py taşındı ve güncellendi.
+fiyatlari_hesapla indirimhesabi.py'ye taşındı ve değiştirildi.
+
+Genel bugfix yapıldı.
+
+Favori seçmeyle alakalı olanlar hariç tüm fonksiyonlar automated teste uygun olması için parametrize edildi.
+
+Gereksiz fonksiyonlar (indirim_guncelle fonksiyonu) silindi ve ilgili düzenleme yapıldı.
+
+Gereksiz global değişkenler silindi joker_yemeksepeti, joker_getir, joker_migros ve gerekli düzenleme yapıldı.
+
+Artık en ucuz uygulamanın fiyatlarının yazdığı label kırmızı renkte gözüküyor.
+
+Yapılacaklar
+GUI.py deki fiyatlari_getir() GUI_actions.py'ye taşınıp güncellenecek.
+Web Scraping modülü
+Farklı restoranların farklı menüleri getirmesini sağlamak
+Karanlık mod eklenebilir(opsiyonel)
+Unit testler yazılmalı
