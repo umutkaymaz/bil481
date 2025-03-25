@@ -1,0 +1,61 @@
+Contributors: Arda Karaçal, Mustafa Umut Kaymaz, Baturalp İskenderoğlu, Önder Kemal Ceylan
+
+Table of Contents:
+	
+	Deployment Plan:
+
+	- Deployment Overview
+	- Deployment Process
+	- Configuration Plan
+
+Task Matrix:
+	
+	- Deployment Overview: Baturalp İskenderoğlu, Önder Kemal Ceylan
+
+	- Deployment Process: Arda Karaçal, Mustafa Umut Kaymaz, Baturalp İskenderoğlu, Önder Kemal Ceylan
+
+	- Configuration Plan: Arda Karaçal, Mustafa Umut Kaymaz
+
+a) Deployment Overview: 
+
+	Projeyi GitHub’dan çekip, tüm bağımlılıkların sisteminizde yüklü olduğunu varsayarak ana script’i doğrudan VSCode terminalinden çalıştırarak demo gerçekleştirilecektir
+
+b) Deployment Process: 
+
+	1)GitHub’dan Projeyi Çekme:
+
+		-VSCode’da “Clone Repository” seçeneğini kullanarak GitHub’daki projeyi çekin.
+		-Çekilen projeyi VSCode’da açın.
+	
+	2)Gerekli Bağımlılıkların Kurulması:
+
+		-VSCode terminalinde, sisteminizde global olarak yüklü Python kullanılarak bağımlılıkları yüklemek için aşağıdaki kodu kullanın:
+			pip install -r requirements.txt
+	
+	3)Uygulamanın Çalıştırılması:
+
+		-Uygulamayı çalıştırmak için main.py modülünü çalıştırın:
+
+	4)Testlerin Çalıştırılması:
+
+		-VSCode terminalinden Pytest ile projeye ait testleri çalıştırarak, her şeyin doğru şekilde çalıştığını doğrulayın:
+			pytest Testadı.py 
+
+c) Configuration Plan:
+
+	Projemizde config.py içerisinde global değişkenler kullanılarak GUI bileşenleri ve veriler yönetilmektedir. 
+
+		-Ana pencere: master = tk.Tk()
+		-Menü ve sepet: menu_data, sepet
+		-Giriş alanları: konum_girisi, restoran_girisi
+		-Etiketler: sonucLabel, yemeksepeti_fiyatlarLabel, getir_fiyatlarLabel, migrosYemek_fiyatlarLabel
+		-Favori listesi: favorites_list, favorite_var
+		-Sipariş miktarı: miktar_var = tk.IntVar
+
+
+
+
+
+
+
+

@@ -1,0 +1,35 @@
+Contributors: Arda Karaçal, Mustafa Umut Kaymaz, Baturalp İskenderoğlu, Önder Kemal Ceylan
+
+Table of Contents:
+	
+	Test Results Report:
+
+	- Test Results Overview
+	- Test Results Analysis
+	- Logs and Outputs
+
+Task Matrix:
+	
+- Test Results Overview: Baturalp İskenderoğlu
+
+- Test Results Analysis: Baturalp İskenderoğlu
+
+- Logs and Outputs: Arda Karaçal, Mustafa Umut Kaymaz, Önder Kemal Ceylan
+
+a) Test Results Overview:
+
+	Test 1:	İstenen restoranın indirimli fiyatlarının GUI’de görüntülenmesi	PASS
+
+	Test 2:	Seçilen yemek miktarı artırıldığında indirimlerin doğru hesaplanması	PASS
+
+	Test 3:	Restoranın favorilere eklenmesi ve anında görüntülenmesi	PASS
+
+	Test 4:	Uygulamanın farklı konumlar ve restoranlar için çalışması	PASS 	
+
+b) Test Results Analysis:
+
+	Since every test was successful, no discrepancies or failures were encountered.
+
+c) Logs and Outputs:
+	
+	Loglar ve outputlar main.log ve test.log içinde.

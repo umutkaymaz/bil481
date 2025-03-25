@@ -1,0 +1,88 @@
+Contributors: Arda Karaçal, Mustafa Umut Kaymaz, Baturalp İskenderoğlu, Önder Kemal Ceylan
+
+Table of Contents:
+	
+	Acceptance Tests and Acceptance Criterias:
+
+	- Defining clear and measurable acceptance criteria for the four selected scenarios
+	- Based on these criteria, creating four acceptance tests for the four selected scenarios
+	- An explanation of how each test corresponds to the acceptance criteria
+
+Task Matrix:
+	
+	- Defining acceptence criterias: Baturalp İskenderoğlu
+
+	- Creating four acceptance tests for the four selected scenarios: Baturalp İskenderoğlu, Önder Kemal Ceylan
+
+	- An explanation of how each test corresponds to the acceptance criteria: Arda Karaçal, Mustafa Umut Kaymaz, Önder Kemal Ceylan
+
+a) Kabul Kriterlerinin Tanımlanması
+
+	Restoran Yemeklerinin İndirimli Fiyatlarının GUI'de Gösterilmesi:
+		İstenen restoranın yemeklerinin, indirimlerle birlikte fiyatının kullanıcı arayüzünde doğru şekilde görüntülenmesi.
+
+	Farklı Miktarlarda İndirim Uygulanması:
+		Seçilen yemeklerin miktarı arttırıldığında veya azaltıldığında, uygulanabilir indirimlerin buna göre güncellenmesi.
+
+	Favori Restoranların Eklenmesi ve Anında Gösterilmesi:
+		Kullanıcının favori restoran eklemesi ve eklenen favori restoranın içeriklerinin (örneğin, menü) anında görüntülenmesi.
+
+	Projede Tüm Restoranların Geçerli Olması:
+		Program, sadece belirli restoranlarla sınırlı kalmayıp, herhangi bir restoranın çalışabilmesini sağlamalıdır.
+
+b) Dört Senaryo için Kabul Testlerinin Oluşturulması
+
+	Senaryo 1:
+
+		Kullanıcı Girdisi:
+			-TOBB Üniversitesi’nin Google Maps adresi
+			-Kullanıcı tarafından girilen “Öncü Döner”
+			-Seçilen ürün: Tavuk Döner Menü x 1
+
+		Beklenen Sonuç:
+			-MigrosYemek: 240.00 TL
+			-Yemeksepeti: 200.00 TL
+			-Getir: 239.90 TL
+
+	Senaryo 2:
+
+		Kullanıcı İşlemi:
+			-Seçilen yemeğin miktarı arttırılarak güncellenir.
+			-Beklenen Sonuç:
+			-Tavuk Döner Menü x 2: 479.80 TL
+		
+		Beklenen Sonuç:
+			-İndirimi uygulandıktan sonraki final fiyat: 329.80 TL
+
+	Senaryo 3:
+
+		Kullanıcı İşlemi:
+			-“Öncü Döner” favori olarak eklenir.
+
+		Beklenen Sonuç:
+			-Favoriler listesi kutusunda “Öncü Döner” isminin görünür olması.
+
+	Senaryo 4:
+
+		Kullanıcı İşlemi:
+			-Kullanıcı yeni bir restoran girer.
+		Beklenen Sonuç:
+			-Yeni restoran menüsü gösterilir ve seçilen yemeklere indirimler uygulanır.
+
+c) Her Testin Kabul Kriterleriyle İlişkilendirilmesinin Açıklaması
+
+	Senaryo 1 Açıklaması:
+
+		-Fiyatların GUI üzerinde doğru şekilde görüntülenmesi, restoranın yemeklerinin indirimli fiyatlarıyla birlikte sunulması kriterini karşılar.
+
+	Senaryo 2 Açıklaması:
+
+		-Seçilen yemek miktarının artırılması veya azaltılması sonucu indirim oranının değişip doğru fiyat hesaplanması, indirimlerin uygulanması kriterini sağlar.
+
+	Senaryo 3 Açıklaması:
+
+		-Restoranın favorilere eklenip, favoriler listesinin anında güncellenmesi, kullanıcının favori restoranlara kolayca erişebilmesini ve içeriklerin anında gösterilmesini sağlayarak 			kriteri karşılar.
+
+	Senaryo 4 Açıklaması:
+
+		-Projenin yalnızca belirli bir restoranla sınırlı kalmayıp, tüm restoranların sistemin genelinde çalışması, projenin evrenselliğini ve esnekliğini göstererek kriteri karşılar.
