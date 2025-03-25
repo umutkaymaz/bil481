@@ -126,7 +126,7 @@ def yemek_sil(joker_yemeksepeti, joker_getir, joker_migros,sepet_icerik :tk.Stri
     secilen_csv_guncelle(sepet, menu_data,sepet_icerik,joker_yemeksepeti, joker_getir, joker_migros)
 
 
-def yemek_sec(event, sepet : dict, selected_food_var : tk.StringVar, miktar_var: tk.IntVar):
+def yemek_sec(sepet : dict, selected_food_var : tk.StringVar, miktar_var: tk.IntVar):
 
     """Secilen yemegi, miktar kontrol alanina aktarma.""" 
 
@@ -222,7 +222,7 @@ def fiyatlari_getir(menu_data : dict,favorite_var : tk.IntVar):
     favorileri_yaz()
 
 
-def favori_sec(event,menu_data:dict,favorite_var : tk.IntVar):
+def favori_sec(menu_data:dict,favorite_var : tk.IntVar):
     """ Favoriler listesinde seçilen favoriyi alıp konumla restoran alanlarını otomatik doldurma. """
     secim = config.favorites_list.curselection()
     if secim:

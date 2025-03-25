@@ -84,7 +84,7 @@ def run_gui():
     config.menu.pack()
 
     #tree_select()'i çağır
-    config.menu.bind("<<TreeviewSelect>>", lambda event :  yemek_sec(event, config.sepet, config.selected_food_var, config.miktar_var))
+    config.menu.bind("<<TreeviewSelect>>", lambda event :  yemek_sec(config.sepet, config.selected_food_var, config.miktar_var))
 
     secim_frame = ttk.Frame(menu_frame)
     secim_frame.pack(fill="x")
@@ -176,7 +176,7 @@ def run_gui():
     config.favorites_list = tk.Listbox(favorites_frame, width=30, height=20)
     config.favorites_list.pack(padx=20)
     #favori secilince favori_sec methodunu çağır
-    config.favorites_list.bind("<<ListboxSelect>>", lambda event : favori_sec(event,config.menu_data,config.favorite_var))
+    config.favorites_list.bind("<<ListboxSelect>>", lambda event : favori_sec(config.menu_data,config.favorite_var))
     favorileri_yaz()
 
     def on_closing():

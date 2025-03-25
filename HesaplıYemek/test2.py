@@ -1,7 +1,8 @@
 import pytest
 import tkinter as tk
 from tkinter import ttk
-from GUI_actions import guncelle_sepet
+from GUI_actions import favori_guncelle
+from GUI_actions import favorileri_yaz
 
 root = tk.Tcl()
 pseudo_sepet_icerik = tk.StringVar(root)
@@ -19,8 +20,7 @@ pseudo_sepet_icerik = tk.StringVar(root)
     
 ])
 
-def test_guncelle_sepet(sepet : dict, sepet_icerik : tk.StringVar,sonuc):
-    guncelle_sepet(sepet, sepet_icerik)
+def test_favoriler(sepet : dict, sepet_icerik : tk.StringVar,sonuc):
+    (sepet, sepet_icerik)
     assert sepet_icerik.get() == sonuc
-
 

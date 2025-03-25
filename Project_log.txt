@@ -28,3 +28,8 @@ fiyatlari_getir() GUI_actions.py'ye taşındı.
 global değişkenlerin tamamı config.py dosyasına taşındı
 test1.py de guncelle_sepet için automated test yazıldı fakat daha fazla test case girilmeli
 fiyatlari_hesapla() Guı_actions.py'ye taşındı.
+
+25 Mart 23.19
+test2.py eklendi
+acceptance test yazılma aşamasında
+kullanılmayan evemt parametreleri yemek_sec ve favori sec'ten cıkarıldı
