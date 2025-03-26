@@ -33,3 +33,9 @@ fiyatlari_hesapla() Guı_actions.py'ye taşındı.
 test2.py eklendi
 acceptance test yazılma aşamasında
 kullanılmayan evemt parametreleri yemek_sec ve favori sec'ten cıkarıldı
+
+26 Mart 16.34
+acceptance_sepete_ekle.py ve senaryo_sepete_ekle.feature dosyaları features dosyasının içine yüklenip güncellendi
+Bu dosyalarla sepete ekleme senaryosunun acceptance testi implement edildi.
+yemek_ekle_Test düzeltildi.
+
