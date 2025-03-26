@@ -2,11 +2,10 @@ import logging
 import pytest
 from indirimhesabi import hesapla_indirim
 
-# Özel logger oluşturma
+
 logger = logging.getLogger("testLogger")
 logger.setLevel(logging.DEBUG)
 
-# FileHandler ekleme
 fh = logging.FileHandler("test.log")
 formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
 fh.setFormatter(formatter)
@@ -30,5 +29,12 @@ logger.addHandler(fh)
 ])
 def test_hesapla_indirim(toplam_fiyat, joker, site, sonuc):
     result = hesapla_indirim(toplam_fiyat, joker, site)
-    logger.info(f"toplam_fiyat: {toplam_fiyat}, joker: {joker}, site: {site} | Beklenen: {sonuc} - Sonuç: {result}")
+    if result == sonuc:
+        logger.info(
+            f"PASS: Test Case: Toplam Fiyat={toplam_fiyat}, Joker={joker}, Site={site} => Expected: {sonuc}, Obtained: {result}"
+        )
+    else:
+        logger.error(
+            f"FAIL: Test Case: Toplam Fiyat={toplam_fiyat}, Joker={joker}, Site={site} => Expected: {sonuc}, Obtained: {result}"
+        )
     assert result == sonuc

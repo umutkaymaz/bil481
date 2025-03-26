@@ -4,11 +4,11 @@ from tkinter import ttk
 from GUI_actions import guncelle_sepet
 import logging
 
-# Özel logger oluşturma
+# Special logger creation
 logger = logging.getLogger("testLogger")
 logger.setLevel(logging.DEBUG)
 
-# FileHandler ekleme
+# Adding FileHandler
 fh = logging.FileHandler("test.log")
 formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
 fh.setFormatter(formatter)
@@ -29,6 +29,9 @@ pseudo_sepet_icerik = tk.StringVar(root)
 ])
 def test_guncelle_sepet(sepet: dict, sepet_icerik: tk.StringVar, sonuc):
     guncelle_sepet(sepet, sepet_icerik)
-    logger.debug(f"guncelle_sepet cagrildi. StringVar icerigi: {sepet_icerik.get()}")
-    assert sepet_icerik.get() == sonuc
-    logger.info("Test basarili.")
+    updated_content = sepet_icerik.get()
+    if updated_content == sonuc:
+        logger.info(f"PASS: Cart {sepet} expected output {sonuc} matches obtained output {updated_content}")
+    else:
+        logger.error(f"FAIL: Cart {sepet} expected output {sonuc} does not match obtained output {updated_content}")
+    assert updated_content == sonuc

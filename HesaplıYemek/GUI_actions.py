@@ -112,7 +112,7 @@ def yemek_ekle(joker_yemeksepeti, joker_getir, joker_migros,sepet_icerik :tk.Str
         secilen_csv_guncelle(sepet, menu_data,sepet_icerik,joker_yemeksepeti, joker_getir, joker_migros)
 
 
-def yemek_sil(joker_yemeksepeti, joker_getir, joker_migros,sepet_icerik, selected_food_var :tk.StringVar,
+def yemek_sil(joker_yemeksepeti, joker_getir, joker_migros,sepet_icerik :tk.StringVar, selected_food_var :tk.StringVar,
                 sepet: dict, miktar_var : tk.IntVar, menu_data: dict):
     """
         sepetten verilen türde 1 adet yemek cıkar.

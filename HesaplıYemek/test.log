@@ -1,57 +1,57 @@
-2025-03-25 23:30:32,693 - INFO - toplam_fiyat: 300, joker: 0, site: 1 | Beklenen: (300, 0, 300) - Sonuç: (300, 0, 300)
-2025-03-25 23:30:32,694 - INFO - toplam_fiyat: 260, joker: 0, site: 1 | Beklenen: (260, 0, 260) - Sonuç: (260, 0, 260)
-2025-03-25 23:30:32,695 - INFO - toplam_fiyat: 90, joker: 1, site: 1 | Beklenen: (90, 0, 90) - Sonuç: (90, 0, 90)
-2025-03-25 23:30:32,697 - INFO - toplam_fiyat: 500, joker: 1, site: 1 | Beklenen: (500, 150, 350) - Sonuç: (500, 150, 350)
-2025-03-25 23:30:32,698 - INFO - toplam_fiyat: 100, joker: 0, site: 2 | Beklenen: (100, 0, 100) - Sonuç: (100, 0, 100)
-2025-03-25 23:30:32,700 - INFO - toplam_fiyat: 200, joker: 0, site: 2 | Beklenen: (200, 0, 200) - Sonuç: (200, 0, 200)
-2025-03-25 23:30:32,701 - INFO - toplam_fiyat: 300, joker: 1, site: 2 | Beklenen: (300, 100, 200) - Sonuç: (300, 100, 200)
-2025-03-25 23:30:32,704 - INFO - toplam_fiyat: 450, joker: 1, site: 2 | Beklenen: (450, 150, 300) - Sonuç: (450, 150, 300)
-2025-03-25 23:30:32,705 - INFO - toplam_fiyat: 450, joker: 0, site: 3 | Beklenen: (450, 0, 450) - Sonuç: (450, 0, 450)
-2025-03-25 23:30:32,706 - INFO - toplam_fiyat: 140, joker: 0, site: 3 | Beklenen: (140, 0, 140) - Sonuç: (140, 0, 140)
-2025-03-25 23:30:32,708 - INFO - toplam_fiyat: 100, joker: 1, site: 3 | Beklenen: (100, 0, 100) - Sonuç: (100, 0, 100)
-2025-03-25 23:30:32,709 - INFO - toplam_fiyat: 370, joker: 1, site: 3 | Beklenen: (370, 120, 250) - Sonuç: (370, 120, 250)
-2025-03-25 23:37:03,070 - INFO - Test baþlýyor: sepet = {'kebap': 10}
-2025-03-25 23:37:03,071 - DEBUG - guncelle_sepet çaðrýldý. StringVar içeriði: kebap: 10
+2025-03-25 23:30:32,693 - INFO - toplam_fiyat: 300, joker: 0, site: 1 | Beklenen: (300, 0, 300) - Sonuï¿½: (300, 0, 300)
+2025-03-25 23:30:32,694 - INFO - toplam_fiyat: 260, joker: 0, site: 1 | Beklenen: (260, 0, 260) - Sonuï¿½: (260, 0, 260)
+2025-03-25 23:30:32,695 - INFO - toplam_fiyat: 90, joker: 1, site: 1 | Beklenen: (90, 0, 90) - Sonuï¿½: (90, 0, 90)
+2025-03-25 23:30:32,697 - INFO - toplam_fiyat: 500, joker: 1, site: 1 | Beklenen: (500, 150, 350) - Sonuï¿½: (500, 150, 350)
+2025-03-25 23:30:32,698 - INFO - toplam_fiyat: 100, joker: 0, site: 2 | Beklenen: (100, 0, 100) - Sonuï¿½: (100, 0, 100)
+2025-03-25 23:30:32,700 - INFO - toplam_fiyat: 200, joker: 0, site: 2 | Beklenen: (200, 0, 200) - Sonuï¿½: (200, 0, 200)
+2025-03-25 23:30:32,701 - INFO - toplam_fiyat: 300, joker: 1, site: 2 | Beklenen: (300, 100, 200) - Sonuï¿½: (300, 100, 200)
+2025-03-25 23:30:32,704 - INFO - toplam_fiyat: 450, joker: 1, site: 2 | Beklenen: (450, 150, 300) - Sonuï¿½: (450, 150, 300)
+2025-03-25 23:30:32,705 - INFO - toplam_fiyat: 450, joker: 0, site: 3 | Beklenen: (450, 0, 450) - Sonuï¿½: (450, 0, 450)
+2025-03-25 23:30:32,706 - INFO - toplam_fiyat: 140, joker: 0, site: 3 | Beklenen: (140, 0, 140) - Sonuï¿½: (140, 0, 140)
+2025-03-25 23:30:32,708 - INFO - toplam_fiyat: 100, joker: 1, site: 3 | Beklenen: (100, 0, 100) - Sonuï¿½: (100, 0, 100)
+2025-03-25 23:30:32,709 - INFO - toplam_fiyat: 370, joker: 1, site: 3 | Beklenen: (370, 120, 250) - Sonuï¿½: (370, 120, 250)
+2025-03-25 23:37:03,070 - INFO - Test baï¿½lï¿½yor: sepet = {'kebap': 10}
+2025-03-25 23:37:03,071 - DEBUG - guncelle_sepet ï¿½aï¿½rï¿½ldï¿½. StringVar iï¿½eriï¿½i: kebap: 10
 
-2025-03-25 23:37:03,071 - INFO - Test baþarýlý.
-2025-03-25 23:37:03,072 - INFO - Test baþlýyor: sepet = {'kebap': 10, 'a': 54}
-2025-03-25 23:37:03,073 - DEBUG - guncelle_sepet çaðrýldý. StringVar içeriði: kebap: 10
+2025-03-25 23:37:03,071 - INFO - Test baï¿½arï¿½lï¿½.
+2025-03-25 23:37:03,072 - INFO - Test baï¿½lï¿½yor: sepet = {'kebap': 10, 'a': 54}
+2025-03-25 23:37:03,073 - DEBUG - guncelle_sepet ï¿½aï¿½rï¿½ldï¿½. StringVar iï¿½eriï¿½i: kebap: 10
 a: 54
 
-2025-03-25 23:37:03,073 - INFO - Test baþarýlý.
-2025-03-25 23:37:03,074 - INFO - Test baþlýyor: sepet = {'z': 32, 'x': 61, 'y': 0, 'muz': 2}
-2025-03-25 23:37:03,074 - DEBUG - guncelle_sepet çaðrýldý. StringVar içeriði: z: 32
+2025-03-25 23:37:03,073 - INFO - Test baï¿½arï¿½lï¿½.
+2025-03-25 23:37:03,074 - INFO - Test baï¿½lï¿½yor: sepet = {'z': 32, 'x': 61, 'y': 0, 'muz': 2}
+2025-03-25 23:37:03,074 - DEBUG - guncelle_sepet ï¿½aï¿½rï¿½ldï¿½. StringVar iï¿½eriï¿½i: z: 32
 x: 61
 muz: 2
 
-2025-03-25 23:37:03,074 - INFO - Test baþarýlý.
-2025-03-25 23:37:03,075 - INFO - Test baþlýyor: sepet = {'z': 32, 'x': 61, 'y': 4, 'muz': 2}
-2025-03-25 23:37:03,075 - DEBUG - guncelle_sepet çaðrýldý. StringVar içeriði: z: 32
+2025-03-25 23:37:03,074 - INFO - Test baï¿½arï¿½lï¿½.
+2025-03-25 23:37:03,075 - INFO - Test baï¿½lï¿½yor: sepet = {'z': 32, 'x': 61, 'y': 4, 'muz': 2}
+2025-03-25 23:37:03,075 - DEBUG - guncelle_sepet ï¿½aï¿½rï¿½ldï¿½. StringVar iï¿½eriï¿½i: z: 32
 x: 61
 y: 4
 muz: 2
 
-2025-03-25 23:37:03,075 - INFO - Test baþarýlý.
-2025-03-25 23:37:03,077 - INFO - Test baþlýyor: sepet = {'pizza': 3}
-2025-03-25 23:37:03,077 - DEBUG - guncelle_sepet çaðrýldý. StringVar içeriði: pizza: 3
+2025-03-25 23:37:03,075 - INFO - Test baï¿½arï¿½lï¿½.
+2025-03-25 23:37:03,077 - INFO - Test baï¿½lï¿½yor: sepet = {'pizza': 3}
+2025-03-25 23:37:03,077 - DEBUG - guncelle_sepet ï¿½aï¿½rï¿½ldï¿½. StringVar iï¿½eriï¿½i: pizza: 3
 
-2025-03-25 23:37:03,077 - INFO - Test baþarýlý.
-2025-03-25 23:37:03,078 - INFO - Test baþlýyor: sepet = {'pizza': 2, 'tantuni': 3}
-2025-03-25 23:37:03,078 - DEBUG - guncelle_sepet çaðrýldý. StringVar içeriði: pizza: 2
+2025-03-25 23:37:03,077 - INFO - Test baï¿½arï¿½lï¿½.
+2025-03-25 23:37:03,078 - INFO - Test baï¿½lï¿½yor: sepet = {'pizza': 2, 'tantuni': 3}
+2025-03-25 23:37:03,078 - DEBUG - guncelle_sepet ï¿½aï¿½rï¿½ldï¿½. StringVar iï¿½eriï¿½i: pizza: 2
 tantuni: 3
 
-2025-03-25 23:37:03,078 - INFO - Test baþarýlý.
-2025-03-25 23:37:03,079 - INFO - Test baþlýyor: sepet = {'doner': 2, 'x': -12, 'y': 0, 'muz': 2}
-2025-03-25 23:37:03,079 - DEBUG - guncelle_sepet çaðrýldý. StringVar içeriði: doner: 2
+2025-03-25 23:37:03,078 - INFO - Test baï¿½arï¿½lï¿½.
+2025-03-25 23:37:03,079 - INFO - Test baï¿½lï¿½yor: sepet = {'doner': 2, 'x': -12, 'y': 0, 'muz': 2}
+2025-03-25 23:37:03,079 - DEBUG - guncelle_sepet ï¿½aï¿½rï¿½ldï¿½. StringVar iï¿½eriï¿½i: doner: 2
 muz: 2
 
-2025-03-25 23:37:03,079 - INFO - Test baþarýlý.
-2025-03-25 23:37:03,080 - INFO - Test baþlýyor: sepet = {'doner': 1, 'x': 6, 'muz': 2}
-2025-03-25 23:37:03,081 - DEBUG - guncelle_sepet çaðrýldý. StringVar içeriði: doner: 1
+2025-03-25 23:37:03,079 - INFO - Test baï¿½arï¿½lï¿½.
+2025-03-25 23:37:03,080 - INFO - Test baï¿½lï¿½yor: sepet = {'doner': 1, 'x': 6, 'muz': 2}
+2025-03-25 23:37:03,081 - DEBUG - guncelle_sepet ï¿½aï¿½rï¿½ldï¿½. StringVar iï¿½eriï¿½i: doner: 1
 x: 6
 muz: 2
 
-2025-03-25 23:37:03,081 - INFO - Test baþarýlý.
+2025-03-25 23:37:03,081 - INFO - Test baï¿½arï¿½lï¿½.
 2025-03-25 23:49:28,598 - INFO - Passed
 2025-03-25 23:49:28,599 - INFO - Passed
 2025-03-25 23:49:28,600 - INFO - Passed
@@ -109,3 +109,191 @@ x: 6
 muz: 2
 
 2025-03-25 23:52:33,668 - INFO - Test basarili.
+2025-03-26 13:24:56,448 - INFO - Test Case: Toplam Fiyat=300, Joker=0, Site=1 => Expected: (300, 0, 300), Obtained: (300, 0, 300)
+2025-03-26 13:24:56,450 - INFO - Test Case: Toplam Fiyat=260, Joker=0, Site=1 => Expected: (260, 0, 260), Obtained: (260, 0, 260)
+2025-03-26 13:24:56,451 - INFO - Test Case: Toplam Fiyat=90, Joker=1, Site=1 => Expected: (90, 0, 90), Obtained: (90, 0, 90)
+2025-03-26 13:24:56,452 - INFO - Test Case: Toplam Fiyat=500, Joker=1, Site=1 => Expected: (500, 150, 350), Obtained: (500, 150, 350)
+2025-03-26 13:24:56,453 - INFO - Test Case: Toplam Fiyat=100, Joker=0, Site=2 => Expected: (100, 0, 100), Obtained: (100, 0, 100)
+2025-03-26 13:24:56,454 - INFO - Test Case: Toplam Fiyat=200, Joker=0, Site=2 => Expected: (200, 0, 200), Obtained: (200, 0, 200)
+2025-03-26 13:24:56,455 - INFO - Test Case: Toplam Fiyat=300, Joker=1, Site=2 => Expected: (300, 100, 200), Obtained: (300, 100, 200)
+2025-03-26 13:24:56,456 - INFO - Test Case: Toplam Fiyat=450, Joker=1, Site=2 => Expected: (450, 150, 300), Obtained: (450, 150, 300)
+2025-03-26 13:24:56,457 - INFO - Test Case: Toplam Fiyat=450, Joker=0, Site=3 => Expected: (450, 0, 450), Obtained: (450, 0, 450)
+2025-03-26 13:24:56,458 - INFO - Test Case: Toplam Fiyat=140, Joker=0, Site=3 => Expected: (140, 0, 140), Obtained: (140, 0, 140)
+2025-03-26 13:24:56,459 - INFO - Test Case: Toplam Fiyat=100, Joker=1, Site=3 => Expected: (100, 0, 100), Obtained: (100, 0, 100)
+2025-03-26 13:24:56,460 - INFO - Test Case: Toplam Fiyat=370, Joker=1, Site=3 => Expected: (370, 120, 250), Obtained: (370, 120, 250)
+2025-03-26 13:26:50,863 - INFO - PASS: Test Case: Toplam Fiyat=300, Joker=0, Site=1 => Expected: (300, 0, 300), Obtained: (300, 0, 300)
+2025-03-26 13:26:50,865 - INFO - PASS: Test Case: Toplam Fiyat=260, Joker=0, Site=1 => Expected: (260, 0, 260), Obtained: (260, 0, 260)
+2025-03-26 13:26:50,866 - INFO - PASS: Test Case: Toplam Fiyat=90, Joker=1, Site=1 => Expected: (90, 0, 90), Obtained: (90, 0, 90)
+2025-03-26 13:26:50,867 - INFO - PASS: Test Case: Toplam Fiyat=500, Joker=1, Site=1 => Expected: (500, 150, 350), Obtained: (500, 150, 350)
+2025-03-26 13:26:50,869 - INFO - PASS: Test Case: Toplam Fiyat=100, Joker=0, Site=2 => Expected: (100, 0, 100), Obtained: (100, 0, 100)
+2025-03-26 13:26:50,870 - INFO - PASS: Test Case: Toplam Fiyat=200, Joker=0, Site=2 => Expected: (200, 0, 200), Obtained: (200, 0, 200)
+2025-03-26 13:26:50,871 - INFO - PASS: Test Case: Toplam Fiyat=300, Joker=1, Site=2 => Expected: (300, 100, 200), Obtained: (300, 100, 200)
+2025-03-26 13:26:50,872 - INFO - PASS: Test Case: Toplam Fiyat=450, Joker=1, Site=2 => Expected: (450, 150, 300), Obtained: (450, 150, 300)
+2025-03-26 13:26:50,873 - INFO - PASS: Test Case: Toplam Fiyat=450, Joker=0, Site=3 => Expected: (450, 0, 450), Obtained: (450, 0, 450)
+2025-03-26 13:26:50,874 - INFO - PASS: Test Case: Toplam Fiyat=140, Joker=0, Site=3 => Expected: (140, 0, 140), Obtained: (140, 0, 140)
+2025-03-26 13:26:50,875 - INFO - PASS: Test Case: Toplam Fiyat=100, Joker=1, Site=3 => Expected: (100, 0, 100), Obtained: (100, 0, 100)
+2025-03-26 13:26:50,876 - INFO - PASS: Test Case: Toplam Fiyat=370, Joker=1, Site=3 => Expected: (370, 120, 250), Obtained: (370, 120, 250)
+2025-03-26 13:27:17,441 - ERROR - FAIL: Test Case: Toplam Fiyat=250, Joker=0, Site=1 => Expected: (300, 0, 300), Obtained: (250, 0, 250)
+2025-03-26 13:27:17,488 - INFO - PASS: Test Case: Toplam Fiyat=260, Joker=0, Site=1 => Expected: (260, 0, 260), Obtained: (260, 0, 260)
+2025-03-26 13:27:17,489 - INFO - PASS: Test Case: Toplam Fiyat=90, Joker=1, Site=1 => Expected: (90, 0, 90), Obtained: (90, 0, 90)
+2025-03-26 13:27:17,490 - INFO - PASS: Test Case: Toplam Fiyat=500, Joker=1, Site=1 => Expected: (500, 150, 350), Obtained: (500, 150, 350)
+2025-03-26 13:27:17,491 - INFO - PASS: Test Case: Toplam Fiyat=100, Joker=0, Site=2 => Expected: (100, 0, 100), Obtained: (100, 0, 100)
+2025-03-26 13:27:17,492 - INFO - PASS: Test Case: Toplam Fiyat=200, Joker=0, Site=2 => Expected: (200, 0, 200), Obtained: (200, 0, 200)
+2025-03-26 13:27:17,493 - INFO - PASS: Test Case: Toplam Fiyat=300, Joker=1, Site=2 => Expected: (300, 100, 200), Obtained: (300, 100, 200)
+2025-03-26 13:27:17,494 - INFO - PASS: Test Case: Toplam Fiyat=450, Joker=1, Site=2 => Expected: (450, 150, 300), Obtained: (450, 150, 300)
+2025-03-26 13:27:17,495 - INFO - PASS: Test Case: Toplam Fiyat=450, Joker=0, Site=3 => Expected: (450, 0, 450), Obtained: (450, 0, 450)
+2025-03-26 13:27:17,496 - INFO - PASS: Test Case: Toplam Fiyat=140, Joker=0, Site=3 => Expected: (140, 0, 140), Obtained: (140, 0, 140)
+2025-03-26 13:27:17,497 - INFO - PASS: Test Case: Toplam Fiyat=100, Joker=1, Site=3 => Expected: (100, 0, 100), Obtained: (100, 0, 100)
+2025-03-26 13:27:17,498 - INFO - PASS: Test Case: Toplam Fiyat=370, Joker=1, Site=3 => Expected: (370, 120, 250), Obtained: (370, 120, 250)
+2025-03-26 13:34:06,356 - DEBUG - guncelle_sepet called. StringVar content: kebap: 10
+
+2025-03-26 13:34:06,357 - INFO - Test passed.
+2025-03-26 13:34:06,358 - DEBUG - guncelle_sepet called. StringVar content: kebap: 10
+a: 54
+
+2025-03-26 13:34:06,358 - INFO - Test passed.
+2025-03-26 13:34:06,359 - DEBUG - guncelle_sepet called. StringVar content: z: 32
+x: 61
+muz: 2
+
+2025-03-26 13:34:06,359 - INFO - Test passed.
+2025-03-26 13:34:06,360 - DEBUG - guncelle_sepet called. StringVar content: z: 32
+x: 61
+y: 4
+muz: 2
+
+2025-03-26 13:34:06,360 - INFO - Test passed.
+2025-03-26 13:34:06,361 - DEBUG - guncelle_sepet called. StringVar content: pizza: 3
+
+2025-03-26 13:34:06,361 - INFO - Test passed.
+2025-03-26 13:34:06,362 - DEBUG - guncelle_sepet called. StringVar content: pizza: 2
+tantuni: 3
+
+2025-03-26 13:34:06,362 - INFO - Test passed.
+2025-03-26 13:34:06,363 - DEBUG - guncelle_sepet called. StringVar content: doner: 2
+muz: 2
+
+2025-03-26 13:34:06,363 - INFO - Test passed.
+2025-03-26 13:34:06,364 - DEBUG - guncelle_sepet called. StringVar content: doner: 1
+x: 6
+muz: 2
+
+2025-03-26 13:34:06,364 - INFO - Test passed.
+2025-03-26 13:36:25,553 - DEBUG - guncelle_sepet called. StringVar content: kebap: 10
+
+2025-03-26 13:36:25,553 - INFO - Test passed.
+2025-03-26 13:36:25,554 - DEBUG - guncelle_sepet called. StringVar content: kebap: 10
+a: 54
+
+2025-03-26 13:36:25,554 - INFO - Test passed.
+2025-03-26 13:36:25,555 - DEBUG - guncelle_sepet called. StringVar content: z: 32
+x: 61
+muz: 2
+
+2025-03-26 13:36:25,555 - INFO - Test passed.
+2025-03-26 13:36:25,557 - DEBUG - guncelle_sepet called. StringVar content: z: 32
+x: 61
+y: 4
+muz: 2
+
+2025-03-26 13:36:25,557 - INFO - Test passed.
+2025-03-26 13:36:25,558 - DEBUG - guncelle_sepet called. StringVar content: pizza: 3
+
+2025-03-26 13:36:25,558 - INFO - Test passed.
+2025-03-26 13:36:25,559 - DEBUG - guncelle_sepet called. StringVar content: pizza: 2
+tantuni: 3
+
+2025-03-26 13:36:25,559 - INFO - Test passed.
+2025-03-26 13:36:25,560 - DEBUG - guncelle_sepet called. StringVar content: doner: 2
+muz: 2
+
+2025-03-26 13:36:25,560 - INFO - Test passed.
+2025-03-26 13:36:25,561 - DEBUG - guncelle_sepet called. StringVar content: doner: 1
+x: 6
+muz: 2
+
+2025-03-26 13:36:25,561 - INFO - Test passed.
+2025-03-26 13:37:11,780 - DEBUG - guncelle_sepet called. StringVar content: kebap: 10
+
+2025-03-26 13:37:11,780 - INFO - Test passed.
+2025-03-26 13:37:11,781 - DEBUG - guncelle_sepet called. StringVar content: kebap: 10
+a: 54
+
+2025-03-26 13:37:11,781 - INFO - Test passed.
+2025-03-26 13:37:11,782 - DEBUG - guncelle_sepet called. StringVar content: z: 32
+x: 61
+muz: 2
+
+2025-03-26 13:37:11,782 - INFO - Test passed.
+2025-03-26 13:37:11,783 - DEBUG - guncelle_sepet called. StringVar content: z: 32
+x: 61
+y: 4
+muz: 2
+
+2025-03-26 13:37:11,783 - INFO - Test passed.
+2025-03-26 13:37:11,784 - DEBUG - guncelle_sepet called. StringVar content: pizza: 3
+
+2025-03-26 13:37:11,784 - INFO - Test passed.
+2025-03-26 13:37:11,785 - DEBUG - guncelle_sepet called. StringVar content: pizza: 2
+tantuni: 3
+
+2025-03-26 13:37:11,785 - INFO - Test passed.
+2025-03-26 13:37:11,786 - DEBUG - guncelle_sepet called. StringVar content: doner: 2
+muz: 2
+
+2025-03-26 13:37:11,786 - INFO - Test passed.
+2025-03-26 13:37:11,787 - DEBUG - guncelle_sepet called. StringVar content: doner: 1
+x: 6
+muz: 2
+
+2025-03-26 13:37:11,787 - INFO - Test passed.
+2025-03-26 13:39:49,653 - INFO - PASS: Cart {'kebap': 10} expected output kebap: 10
+ matches obtained output kebap: 10
+
+2025-03-26 13:39:49,655 - INFO - PASS: Cart {'kebap': 10, 'a': 54} expected output kebap: 10
+a: 54
+ matches obtained output kebap: 10
+a: 54
+
+2025-03-26 13:39:49,656 - INFO - PASS: Cart {'z': 32, 'x': 61, 'y': 0, 'muz': 2} expected output z: 32
+x: 61
+muz: 2
+ matches obtained output z: 32
+x: 61
+muz: 2
+
+2025-03-26 13:39:49,657 - INFO - PASS: Cart {'z': 32, 'x': 61, 'y': 4, 'muz': 2} expected output z: 32
+x: 61
+y: 4
+muz: 2
+ matches obtained output z: 32
+x: 61
+y: 4
+muz: 2
+
+2025-03-26 13:39:49,658 - INFO - PASS: Cart {'pizza': 3} expected output pizza: 3
+ matches obtained output pizza: 3
+
+2025-03-26 13:39:49,659 - INFO - PASS: Cart {'pizza': 2, 'tantuni': 3} expected output pizza: 2
+tantuni: 3
+ matches obtained output pizza: 2
+tantuni: 3
+
+2025-03-26 13:39:49,659 - INFO - PASS: Cart {'doner': 2, 'x': -12, 'y': 0, 'muz': 2} expected output doner: 2
+muz: 2
+ matches obtained output doner: 2
+muz: 2
+
+2025-03-26 13:39:49,660 - INFO - PASS: Cart {'doner': 1, 'x': 6, 'muz': 2} expected output doner: 1
+x: 6
+muz: 2
+ matches obtained output doner: 1
+x: 6
+muz: 2
+
+2025-03-26 13:42:14,052 - INFO - PASS: Food addition test for 'Cheeseburger': expected 11, obtained 11
+2025-03-26 13:44:08,916 - INFO - PASS: Food addition test for 'Cheeseburger': expected 11, obtained 11
+2025-03-26 13:51:20,483 - INFO - PASS: Food removal test for 'Cheeseburger': expected 9, obtained 9
+2025-03-26 13:52:20,944 - INFO - PASS: Food selection test for 'Cheeseburger': expected (Cheeseburger, 10), obtained (Cheeseburger, 10)
+2025-03-26 13:52:20,946 - ERROR - FAIL: Food selection test for 'Cheeseburger': expected (Pizza, 5), obtained (Cheeseburger, 0)
+2025-03-26 13:52:21,060 - ERROR - FAIL: Food selection test for 'Cheeseburger': expected (Doner, 3), obtained (Cheeseburger, 0)
