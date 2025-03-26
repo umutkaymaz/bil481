@@ -3,15 +3,6 @@ import tkinter as tk
 from tkinter import ttk
 from GUI_actions import yemek_ekle
 import config
-import logging
-
-# Create logger
-logger = logging.getLogger("testLogger")
-logger.setLevel(logging.DEBUG)
-fh = logging.FileHandler("test.log")
-formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
-fh.setFormatter(formatter)
-logger.addHandler(fh)
 
 root = tk.Tk()
 
@@ -31,24 +22,22 @@ pseudo_food_var = tk.StringVar(root)
 pseudo_miktar_var = tk.IntVar(root)
 
 @pytest.mark.parametrize(
-    "joker_yemeksepeti, joker_getir, joker_migros, sepet_icerik, selected_food_var, sepet, miktar_var, menu_data, sonuc",
+    "joker_yemeksepeti, joker_getir, joker_migros, sepet_icerik, selected_food_var, sepet, miktar_var, menu_data,dummy_yemek, sonuc",
     [
-        (
-            Yemeksepeti_J, Getir_J, Migros_J, pseudo_sepet_icerik, pseudo_food_var,
-            {"Cheeseburger": 10}, pseudo_miktar_var,
-            {"Cheeseburger": {"Yemeksepeti": 350, "Getir": 330, "MigrosYemek": 330}}, 11
-        )
+        (Yemeksepeti_J, Getir_J, Migros_J, pseudo_sepet_icerik, pseudo_food_var,
+          {"Cheeseburger": 10}, pseudo_miktar_var, {"Cheeseburger": {"Yemeksepeti": 350, "Getir": 330, "MigrosYemek": 330}},"Cheeseburger", 11),
+        
+        (Yemeksepeti_J, Getir_J, Migros_J, pseudo_sepet_icerik, pseudo_food_var,
+          {"a": 8}, pseudo_miktar_var, {"a": {"Yemeksepeti": 350, "Getir": 330, "MigrosYemek": 330}},"a", 9),
+        
+        (Yemeksepeti_J, Getir_J, Migros_J, pseudo_sepet_icerik, pseudo_food_var,
+          {}, pseudo_miktar_var, {"a": {"Yemeksepeti": 350, "Getir": 330, "MigrosYemek": 330}},"a", 1),
     ]
 )
-def test_yemek_ekle(joker_yemeksepeti, joker_getir, joker_migros, sepet_icerik, selected_food_var: tk.StringVar,
-                    sepet: dict, miktar_var: tk.IntVar, menu_data: dict, sonuc):
-    selected_food_var.set("Cheeseburger")
-    yemek_ekle(joker_yemeksepeti, joker_getir, joker_migros, sepet_icerik,
-               selected_food_var, sepet, miktar_var, menu_data)
-    obtained = miktar_var.get()
-    food_name = selected_food_var.get()
-    if obtained == sonuc:
-        logger.info(f"PASS: Food addition test for '{food_name}': expected {sonuc}, obtained {obtained}")
-    else:
-        logger.error(f"FAIL: Food addition test for '{food_name}': expected {sonuc}, obtained {obtained}")
-    assert obtained == sonuc
+
+def test_yemek_ekle(joker_yemeksepeti, joker_getir, joker_migros, sepet_icerik: tk.StringVar, selected_food_var: tk.StringVar,
+                    sepet: dict, miktar_var: tk.IntVar, menu_data: dict,dummy_yemek, sonuc):
+    selected_food_var.set(dummy_yemek)
+    yemek_ekle(joker_yemeksepeti, joker_getir, joker_migros, sepet_icerik, selected_food_var,
+                sepet, miktar_var, menu_data)
+    assert miktar_var.get() == sonuc

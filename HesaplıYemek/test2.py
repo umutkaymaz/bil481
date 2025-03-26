@@ -1,26 +1,25 @@
 import pytest
 import tkinter as tk
 from tkinter import ttk
-from GUI_actions import favori_guncelle
-from GUI_actions import favorileri_yaz
+from GUI_actions import fiyatlari_getir
+import config
 
 root = tk.Tcl()
 pseudo_sepet_icerik = tk.StringVar(root)
+a = tk.StringVar(root)
+config.konum_girisi = tk.Entry(root,textvariable=a)
+config.restoran_girisi = tk.Entry(root,textvariable=a)
+config.sonucLabel = tk.Label(root)
+config.menu = ttk.Treeview(root, columns=("Yemek", "YemekSepeti", "Getir", "MigrosYemek"), show="headings")
+config.menu_data = {}
 
-@pytest.mark.parametrize("sepet, sepet_icerik,sonuc", [
-    ({"kebap": 10}, pseudo_sepet_icerik,"kebap: 10\n"),
-    ({"kebap": 10,"a" : 54}, pseudo_sepet_icerik,"kebap: 10\na: 54\n"),
-    ({"z" : 32,"x" : 61,"y" : 0,"muz" : 2}, pseudo_sepet_icerik,"z: 32\nx: 61\nmuz: 2\n"),
-    ({"z" : 32,"x" : 61,"y" : 4,"muz" : 2}, pseudo_sepet_icerik,"z: 32\nx: 61\ny: 4\nmuz: 2\n"),
-    
-    ({"pizza": 3}, pseudo_sepet_icerik,"pizza: 3\n"),
-    ({"pizza": 2,"tantuni" : 3}, pseudo_sepet_icerik,"pizza: 2\ntantuni: 3\n"),
-    ({"doner" : 2,"x" : -12,"y" : 0,"muz" : 2}, pseudo_sepet_icerik,"doner: 2\nmuz: 2\n"),
-    ({"doner" : 1,"x" : 6,"muz" : 2}, pseudo_sepet_icerik,"doner: 1\nx: 6\nmuz: 2\n")
-    
+@pytest.mark.parametrize("menu_data, favorite_var, sonuc", [
+    (config.menu_data, 0,"" ),
 ])
 
-def test_favoriler(sepet : dict, sepet_icerik : tk.StringVar,sonuc):
-    (sepet, sepet_icerik)
-    assert sepet_icerik.get() == sonuc
+def fiyatlari_getir_test(menu_data : dict,favorite_var : tk.IntVar,sonuc):
+    fiyatlari_getir(config.menu_data,config.favorite_var)
+    for x in config.menu.get_children():
+        assert config.menu.item(x)["values"] == ("Tavuk Burger",300,300,320)
+        break
 
