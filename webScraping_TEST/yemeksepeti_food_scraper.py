@@ -53,5 +53,3 @@ def yemeksepeti_food_scrape(address, query):
     if driver2:
         driver2.quit()
         os._exit(0)
-
-yemeksepeti_food_scrape("Beştepe, Söğütözü Cd. 12 B, 06560 Yenimahalle/Ankara", "Öncü Döner")

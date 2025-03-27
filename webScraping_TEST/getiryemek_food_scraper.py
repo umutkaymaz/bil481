@@ -101,7 +101,3 @@ def is_matching_restaurant(restaurant_name, query):
         return True
     return False
 
-
-
-
-getiryemek_restaurant_scrape("Beştepe, Söğütözü Cd. 12 B, 06560 Yenimahalle/Ankara", "Öncü Döner")
