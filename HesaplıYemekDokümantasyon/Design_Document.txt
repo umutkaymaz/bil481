@@ -64,7 +64,7 @@ Technology Stack:
 
 	Backend & Scripting: Python
 
-	Web scraping libraries: Python request module and Beautifulsoup
+	Web scraping libraries: Python request module and Selenium
 	
 	Databases: 
 
@@ -80,11 +80,14 @@ Codebase Structure:
 	Folders: 
 		/HesaplıYemek: Every module and .csv file in the program will be in HesaplıYemek folder
 	Modules:
-		Web_scraping.py: 
+		yemeksepeti_scrapper.py:
+		getiryemek_scrapper.py: 
 		indirimhesabı.py: 
 		test.py: 
 		GUI.py: 
 		main.py:
+		GUI_actions.py:
+		acceptance_x_test:
 
 Key Implementations:
 	Web_scraping.py: The module that implements web scraping from different platforms, stores the data in .csv files
@@ -96,6 +99,15 @@ Key Implementations:
 	GUI.py: The module that implements User Interface
 
 	main.py The main file that runs the program 
+	
+	GUI_actions.py: implements guı actions
+		
+	acceptance_x_test: make acceptance test to feature x
+	
+	yemeksepeti_scrapper.py: yemeksepeti web scraping
+		
+	getiryemek_scrapper.py: 
+
 
 Component Interfaces:
 GUI Components
