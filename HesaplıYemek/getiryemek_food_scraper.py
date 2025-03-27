@@ -89,10 +89,10 @@ def getiryemek_restaurant_scrape(address, query):
                     dish_price = dish_price.replace(",", ".")[1:]
                     dish_prices.append(dish_price)
 
-        df = pd.DataFrame({"Name" : dish_names, "Price" : dish_prices})
+        df = pd.DataFrame({"Name" : dish_names, "PriceGetir" : dish_prices})
         driver.quit()
-        return df
-        #df.to_csv("./webScraping_TEST/getiryemekSCRAPED.csv")
+        
+        df.to_csv("Getiryemek.csv",index=False)
     driver.quit()
             
 
@@ -102,4 +102,3 @@ def is_matching_restaurant(restaurant_name, query):
     if restaurant_name.find(query) > -1:
         return True
     return False
-
