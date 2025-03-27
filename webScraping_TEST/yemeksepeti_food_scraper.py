@@ -30,6 +30,21 @@ def yemeksepeti_food_scrape(address, query):
 
     time.sleep(5)
 
+    delivery_fee_box = driver2.find_element(by="xpath", value='//div[contains(@class, "delivery-fee-container")]')
+    delivery_fee = delivery_fee_box.find_element(by="xpath", value='./span').text
+    if delivery_fee.find("Ücretsiz Teslimat") > -1:
+        delivery_fee = 0
+    else:
+        delivery_fee = delivery_fee.replace(",", ".")[:delivery_fee.find("TL") - 1]
+    
+    minimum_value_div = driver2.find_element(by="xpath", value='//div[contains(@data-testid, "vendor-info-minimum-order-value")]')
+    minimum_value = minimum_value_div.find_element(by="xpath", value='./span').text
+    minimum_value = minimum_value[minimum_value.find("ı")+2:minimum_value.find("T")-1].replace(",",".")
+
+    info = pd.DataFrame({"Yemeksepeti_delivery" : delivery_fee, "Yemeksepeti_minimum" : minimum_value})
+
+    info.to_csv("./yemeksepeti_info.csv")
+
     dishes = driver2.find_elements("xpath", '//li[contains(@data-testid, "menu-product")]')
 
     dish_names = []

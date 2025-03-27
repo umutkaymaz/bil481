@@ -75,6 +75,12 @@ def getiryemek_restaurant_scrape(address, query):
         dish_names = []
         dish_prices = []
 
+        minimum_value = driver.find_element(by="xpath", value='/html/body/div[1]/div[2]/main/div/div/div/div[1]/div/div/div[2]/div[3]/div/article[2]/div[2]/div/div/span').text
+        minimum_value = minimum_value[minimum_value.find("₺"):].replace(",",".")
+
+        info = pd.DataFrame({"Getiryemek_minimum" : minimum_value})
+        info.to_csv("./getiryemek_info.csv")
+
         menu = driver.find_element(by="xpath", value='/html/body/div[1]/div[3]/main/div/div/div/div[3]/div[2]/div/div[2]')
         sub_menus = menu.find_elements(by="xpath", value='./div')
         for sub_menu in sub_menus:
