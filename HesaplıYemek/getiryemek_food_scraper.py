@@ -82,14 +82,12 @@ def getiryemek_restaurant_scrape(address, query):
                 dishes = sub_menu.find_elements(by="xpath", value='./div')
                 for dish in dishes:
                     dish_name = dish.find_element(by="xpath", value='.//h4[contains(@data-testid, "title")]').text
-                    if dish_name.find("(") > -1:
-                        dish_name = dish_name[:dish_name.find("(") - 1]
                     dish_names.append(dish_name)
                     dish_price = dish.find_element(by="xpath", value='.//span[contains(@data-testid, "text")]').text
                     dish_price = dish_price.replace(",", ".")[1:]
                     dish_prices.append(dish_price)
 
-        df = pd.DataFrame({"Name" : dish_names, "PriceGetir" : dish_prices})
+        df = pd.DataFrame({"food" : dish_names, "Getir" : dish_prices})
         driver.quit()
         
         df.to_csv("Getiryemek.csv",index=False)

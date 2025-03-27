@@ -1,136 +1,60 @@
-Name,PriceYemek,PriceGetir
-2 Al 1 Öde,,249.0
-2'li Tako,136.0,
-7UP,33.15,
-Acı Sos,,10.0
-Ayran,25.5,35.0
-Ayran,25.5,30.0
-Ayran,25.5,90.0
-Ayran,29.75,35.0
-Ayran,29.75,30.0
-Ayran,29.75,90.0
-Ayran,76.5,35.0
-Ayran,76.5,30.0
-Ayran,76.5,90.0
-Bbq Sos,,10.0
-Big Roll,,259.0
-Big Vegan Roll,,120.0
-Big Vejetarian Roll,,120.0
-Biggest Roll,,274.0
-Carte d'Or Meyve Rüyası,34.0,
-Cheese Potato Sandwich,,145.0
-Chicken Sandwich,,224.0
-Classic Menu,,254.0
-Coca Cola,,65.0
-Double Classic Menu,,369.0
-Double King Menu,,419.0
-Double King Menü,381.65,
-Double Klasik Menü,330.65,
-Eker Kazandibi,25.5,
-Eker Keşkül,25.5,
-Eker Profiterol,34.0,
-Eker Puding,25.5,
-Eker Sütlaç,25.5,
-Eker Tavukgöğsü,42.5,
-Elma Dilim Patates Kızartması,42.5,
-Getir Yemek Özel Menü 1,,279.0
-Junior Menu,,249.0
-Junior Tavuk Dürüm Menü,211.65,
-Kazandibi,,40.0
-Kaşarlı Patso Sandviç,119.0,
-Keşkül,,30.0
-Klasik Tavuk Dürüm Menü,215.9,
-Klasik Tavuk Dürüm Menü,215.9,
-Large Et Döner Dürüm,267.75,
-Large Tavuk Döner Dürüm,224.4,
-Lipton Ice Tea,51.0,60.0
-Magnum Mini Badem,34.0,
-Magnum Mini Cookie,34.0,
-Magnum Mini Sunlover,34.0,
-Maxi Menu,,274.0
-Maxi Tavuk Dürüm Menü,237.15,
-Maxi Tavuk Dürüm Menü,237.15,
-Medium Et Döner Dürüm,233.75,
-Medium Roll,,224.0
-Medium Tavuk Döner Dürüm,186.15,
-Medium Vegan Roll,,105.0
-Medium Vegetarian Roll,,105.0
-Mega Menu,,294.0
-Mega Tavuk Dürüm Menü,258.4,
-Mega Tavuk Dürüm Menü,258.4,
-Patates Kızartması,42.5,
-Patates Kızartması,42.5,
-Patso Sandviç,102.0,
-Pepsi,51.0,60.0
-Pepsi,51.0,90.0
-Pepsi,76.5,60.0
-Pepsi,76.5,90.0
-Pepsi Max,76.5,90.0
-Pepsi Zero Sugar,,60.0
-Pilav Üstü Tavuk Döner,,264.0
-Potato Sandwich,,110.0
-Profiterol,,50.0
-Puding,,40.0
-Ramazan Menüsü,323.0,
-Ramazan Menüsü,493.0,
-Ramazan Menüsü,340.0,
-Ramazan Menüsü,467.5,
-Ranch Sos,,10.0
-SD Big Menu,,269.0
-SD Biggest Menu,,284.0
-SD Large Et Dürüm Menü,280.5,
-SD Large Tavuk Döner Menü,232.9,
-SD Medium Et Dürüm Menü,246.5,
-SD Medium Menu,,229.0
-SD Medium Tavuk Döner Menü,190.4,
-SD Small Et Dürüm Menü,208.25,
-SD Small Menu,,224.0
-SD Small Tavuk Döner Menü,186.15,
-SD XL Et Döner Dürüm,335.75,
-SD Xlarge Tavuk Döner Menü,249.9,
-Sarımsaklı Mayonez,,10.0
-Small Et Döner Dürüm,195.5,
-Small Roll,,219.0
-Small Tavuk Döner Dürüm,180.2,
-Soda,25.5,30.0
-Soğan Halkası,42.5,
-Soğan Halkası,34.0,
-Soğan Halkası,55.25,
-Su,12.75,15.0
-Sütlaç,,40.0
-Taco,,194.0
-Taco Delisi,,389.0
-Taco Keyfi,,289.0
-Tavuk Döner,266.9,254.0
-Tavuk Döner,266.9,309.0
-Tavuk Döner,266.9,379.0
-Tavuk Döner,266.9,529.0
-Tavuk Döner,449.65,254.0
-Tavuk Döner,449.65,309.0
-Tavuk Döner,449.65,379.0
-Tavuk Döner,449.65,529.0
-Tavuk Döner,527.0,254.0
-Tavuk Döner,527.0,309.0
-Tavuk Döner,527.0,379.0
-Tavuk Döner,527.0,529.0
-Tavuk Döner,339.15,254.0
-Tavuk Döner,339.15,309.0
-Tavuk Döner,339.15,379.0
-Tavuk Döner,339.15,529.0
-Tavuk Döner Sandviç,186.15,
-Tavuk Tako,72.25,
-Tropicana,51.0,60.0
-XL Tavuk Döner Dürüm,237.15,
-XL Tavuk Döner Dürüm,237.15,
-Xlarge Et Döner Dürüm,314.5,
-Yedigün,76.5,90.0
-Yedigün,76.5,60.0
-Yedigün,51.0,90.0
-Yedigün,51.0,60.0
-Yemeksepeti Özel Menü 1,232.9,
-Yemeksepeti Özel Menü 1,232.9,
-İftar Menüsü 1,,360.0
-İftar Menüsü 2,,380.0
-İftar Menüsü 3,,500.0
-İftar Menüsü 4,,530.0
-Şalgam Suyu,16.57,40.0
+Name,PriceYemek,PriceGetir,MigrosYemek
+2 Al 1 Öde,,249.0,0
+Acı Sos,,10.0,0
+Ayran,,35.0,0
+Ayran,,30.0,0
+Ayran,,90.0,0
+Bbq Sos,,10.0,0
+Big Roll,,259.0,0
+Big Vegan Roll,,120.0,0
+Big Vejetarian Roll,,120.0,0
+Biggest Roll,,274.0,0
+Cheese Potato Sandwich,,145.0,0
+Chicken Sandwich,,224.0,0
+Classic Menu,,254.0,0
+Coca Cola,,65.0,0
+Double Classic Menu,,369.0,0
+Double King Menu,,419.0,0
+Getir Yemek Özel Menü 1,,279.0,0
+Junior Menu,,249.0,0
+Kazandibi,,40.0,0
+Keşkül,,30.0,0
+Lipton Ice Tea,,60.0,0
+Maxi Menu,,274.0,0
+Medium Roll,,224.0,0
+Medium Vegan Roll,,105.0,0
+Medium Vegetarian Roll,,105.0,0
+Mega Menu,,294.0,0
+Pepsi,,60.0,0
+Pepsi,,90.0,0
+Pepsi Max,,90.0,0
+Pepsi Zero Sugar,,60.0,0
+Pilav Üstü Tavuk Döner,,264.0,0
+Potato Sandwich,,110.0,0
+Profiterol,,50.0,0
+Puding,,40.0,0
+Ranch Sos,,10.0,0
+SD Big Menu,,269.0,0
+SD Biggest Menu,,284.0,0
+SD Medium Menu,,229.0,0
+SD Small Menu,,224.0,0
+Sarımsaklı Mayonez,,10.0,0
+Small Roll,,219.0,0
+Soda,,30.0,0
+Su,,15.0,0
+Sütlaç,,40.0,0
+Taco,,194.0,0
+Taco Delisi,,389.0,0
+Taco Keyfi,,289.0,0
+Tavuk Döner,,254.0,0
+Tavuk Döner,,309.0,0
+Tavuk Döner,,379.0,0
+Tavuk Döner,,529.0,0
+Tropicana,,60.0,0
+Yedigün,,90.0,0
+Yedigün,,60.0,0
+İftar Menüsü 1,,360.0,0
+İftar Menüsü 2,,380.0,0
+İftar Menüsü 3,,500.0,0
+İftar Menüsü 4,,530.0,0
+Şalgam Suyu,,40.0,0

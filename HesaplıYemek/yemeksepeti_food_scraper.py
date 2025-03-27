@@ -39,14 +39,12 @@ def yemeksepeti_food_scrape(address, query):
         dish_name = dish.find_element("xpath", './/span[contains(@data-testid, "menu-product-name")]').text
         if dish_name == "Poşet":
             continue
-        if dish_name.find("(") > -1:
-            dish_name = dish_name[:dish_name.find("(") - 1]
         dish_names.append(dish_name)
         dish_price = dish.find_element("xpath", './/p[contains(@data-testid, "menu-product-price")]').text
         dish_price = dish_price.replace(",",".")[:dish_price.find("T") - 1]
         dish_prices.append(dish_price)
 
-    df = pd.DataFrame({"Name" : dish_names, "PriceYemek" : dish_prices})
+    df = pd.DataFrame({"food" : dish_names, "Yemeksepeti" : dish_prices})
     
     df.to_csv("Yemeksepeti.csv", index=False)
 

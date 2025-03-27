@@ -15,6 +15,7 @@ def menu_al(path_csv):
     dfYemekSepeti = pd.read_csv("Yemeksepeti.csv")
     dfGetir = pd.read_csv("Getiryemek.csv")
     
-    dfMenu = pd.merge(dfYemekSepeti,dfGetir,on="Name",how="outer")
+    dfMenu = pd.merge(dfYemekSepeti,dfGetir,on="food",how="outer")
+    dfMenu["MigrosYemek"] = 0
     dfMenu.to_csv(path_csv,index=False)
     return dfMenu

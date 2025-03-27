@@ -3,6 +3,7 @@ from tkinter import ttk
 import pandas as pd
 import config
 from indirimhesabi import hesapla_indirim
+from merge import menu_al
 ##GUI daki değiskenleri aktardım
 #Sadece GUI'daki compenentları frame label, Entry, Treeview,checkboxlar gibi yapıları parametre olarak değil global değişken olarak aktardım.
 
@@ -42,7 +43,7 @@ def fiyatlari_hesapla(joker_yemeksepeti, joker_getir, joker_migros, sepet : dict
     config.migrosYemek_fiyatlarLabel.config(foreground="purple",text=f"MigrosYemek: Toplam {toplam_fiyat_migros} TL, İndirim {indirim_migros} TL, İndirimli {indirimli_migros} TL")
 
     
-    fiyatList = {indirimli_yemeksepeti : "yemeksepeti", indirimli_getir: "getir",indirimli_migros: "migros"}
+    fiyatList = {indirimli_yemeksepeti : "yemeksepeti", indirimli_getir: "getir"}
     fiyatMin = float('inf') #sonsuz büyüklükte sayı atadım
     appMin = ""
     
@@ -57,8 +58,6 @@ def fiyatlari_hesapla(joker_yemeksepeti, joker_getir, joker_migros, sepet : dict
             config.yemeksepeti_fiyatlarLabel.config(foreground="red")
         case "getir":
             config.getir_fiyatlarLabel.config(foreground="red")
-        case "migros":
-            config.migrosYemek_fiyatlarLabel.config(foreground="red")
         case  _:
             print(appMin)
 
@@ -184,13 +183,14 @@ def fiyatlari_getir(menu_data : dict,favorite_var : tk.IntVar):
 
     yer = config.konum_girisi.get()
     lokanta = config.restoran_girisi.get()
-
+    menu_al("menu.csv")
     if not yer or not lokanta:
         config.sonucLabel.config(text="Lütfen adres ve restoran giriniz.")
         return
     
     try:
         df = pd.read_csv("menu.csv")
+        df = df.fillna(0)
     except FileNotFoundError:
         config.sonucLabel.config(text="menu.csv bulunamadi!")
         return
