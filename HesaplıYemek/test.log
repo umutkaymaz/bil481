@@ -334,3 +334,31 @@ muz: 2
 2025-03-26 21:26:00,283 - INFO - PASS: Food selection test for 'Sushi': expected (Sushi, 8), obtained (Sushi, 8)
 2025-03-26 21:26:00,285 - INFO - PASS: Food selection test for 'Taco': expected (Taco, 6), obtained (Taco, 6)
 2025-03-26 21:26:00,286 - INFO - PASS: Food selection test for 'Salad': expected (Salad, 1), obtained (Salad, 1)
+2025-03-27 09:17:30,659 - INFO - Menu listing for 'Pizza'.
+2025-03-27 09:17:30,660 - INFO - User selected food 'Pizza'.
+2025-03-27 09:17:30,661 - INFO - User clicked '+' button.
+2025-03-27 09:17:30,664 - INFO - PASS: Cart label contains expected text 'Pizza: 1'.
+2025-03-27 09:20:04,121 - INFO - Kullanýcý konumunu girdi: Söðütözü, Söðütözü Cd. No:43, 06510 Çankaya/Ankara
+2025-03-27 09:20:04,121 - INFO - Kullanýcý konumunu girdi: Söðütözü, Söðütözü Cd. No:43, 06510 Çankaya/Ankara
+2025-03-27 09:20:04,122 - INFO - Kullanýcý restoran bilgisini girdi: Öncü Döner
+2025-03-27 09:20:04,122 - INFO - Kullanýcý restoran bilgisini girdi: Öncü Döner
+2025-03-27 09:20:04,131 - INFO - Kullanýcý favori butonuna týkladý.
+2025-03-27 09:20:04,131 - INFO - Kullanýcý favori butonuna týkladý.
+2025-03-27 09:20:04,131 - INFO - PASS: Favori listesinde 'Söðütözü, Söðütözü Cd. No:43, 06510 Çankaya/Ankara - Öncü Döner' bulundu.
+2025-03-27 09:20:04,131 - INFO - PASS: Favori listesinde 'Söðütözü, Söðütözü Cd. No:43, 06510 Çankaya/Ankara - Öncü Döner' bulundu.
+2025-03-27 09:20:04,143 - INFO - Menu listing for 'Pizza'.
+2025-03-27 09:20:04,143 - INFO - Menu listing for 'Pizza'.
+2025-03-27 09:20:04,144 - INFO - User selected food 'Pizza'.
+2025-03-27 09:20:04,144 - INFO - User selected food 'Pizza'.
+2025-03-27 09:20:04,144 - INFO - User clicked '+' button.
+2025-03-27 09:20:04,144 - INFO - User clicked '+' button.
+2025-03-27 09:20:04,147 - INFO - PASS: Cart label contains expected text 'Pizza: 1'.
+2025-03-27 09:20:04,147 - INFO - PASS: Cart label contains expected text 'Pizza: 1'.
+2025-03-27 09:22:35,245 - INFO - Kullanýcý konumunu girdi: Söðütözü, Söðütözü Cd. No:43, 06510 Çankaya/Ankara
+2025-03-27 09:22:35,245 - INFO - Kullanýcý konumunu girdi: Söðütözü, Söðütözü Cd. No:43, 06510 Çankaya/Ankara
+2025-03-27 09:22:35,246 - INFO - Kullanýcý restoran bilgisini girdi: Öncü Döner
+2025-03-27 09:22:35,246 - INFO - Kullanýcý restoran bilgisini girdi: Öncü Döner
+2025-03-27 09:22:35,254 - INFO - Kullanýcý favori butonuna týkladý.
+2025-03-27 09:22:35,254 - INFO - Kullanýcý favori butonuna týkladý.
+2025-03-27 09:22:35,255 - INFO - PASS: Favori listesinde 'Söðütözü, Söðütözü Cd. No:43, 06510 Çankaya/Ankara - Öncü Döner' bulundu.
+2025-03-27 09:22:35,255 - INFO - PASS: Favori listesinde 'Söðütözü, Söðütözü Cd. No:43, 06510 Çankaya/Ankara - Öncü Döner' bulundu.
