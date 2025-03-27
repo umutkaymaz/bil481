@@ -297,3 +297,40 @@ muz: 2
 2025-03-26 13:52:20,944 - INFO - PASS: Food selection test for 'Cheeseburger': expected (Cheeseburger, 10), obtained (Cheeseburger, 10)
 2025-03-26 13:52:20,946 - ERROR - FAIL: Food selection test for 'Cheeseburger': expected (Pizza, 5), obtained (Cheeseburger, 0)
 2025-03-26 13:52:21,060 - ERROR - FAIL: Food selection test for 'Cheeseburger': expected (Doner, 3), obtained (Cheeseburger, 0)
+2025-03-26 16:58:33,554 - INFO - PASS: Food selection test for 'Cheeseburger': expected (Cheeseburger, 10), obtained (Cheeseburger, 10)
+2025-03-26 16:58:33,556 - ERROR - FAIL: Food selection test for 'Cheeseburger': expected (Pizza, 5), obtained (Cheeseburger, 0)
+2025-03-26 16:58:33,666 - ERROR - FAIL: Food selection test for 'Cheeseburger': expected (Doner, 3), obtained (Cheeseburger, 0)
+2025-03-26 17:04:21,109 - INFO - PASS: Food selection test for 'Cheeseburger': expected (Cheeseburger, 10), obtained (Cheeseburger, 10)
+2025-03-26 17:04:21,110 - ERROR - FAIL: Food selection test for 'Cheeseburger': expected (Pizza, 5), obtained (Cheeseburger, 0)
+2025-03-26 17:04:21,229 - ERROR - FAIL: Food selection test for 'Cheeseburger': expected (Doner, 3), obtained (Cheeseburger, 0)
+2025-03-26 17:06:33,425 - INFO - PASS: Food selection test for 'Cheeseburger': expected (Cheeseburger, 10), obtained (Cheeseburger, 10)
+2025-03-26 17:06:33,426 - INFO - PASS: Food selection test for 'Pizza': expected (Pizza, 5), obtained (Pizza, 5)
+2025-03-26 17:06:33,427 - INFO - PASS: Food selection test for 'Doner': expected (Doner, 3), obtained (Doner, 3)
+2025-03-26 17:46:11,595 - INFO - PASS: yemek_ekle test for 'Cheeseburger': expected 11, obtained 11
+2025-03-26 17:46:11,600 - INFO - PASS: yemek_ekle test for 'a': expected 9, obtained 9
+2025-03-26 17:46:11,604 - INFO - PASS: yemek_ekle test for 'a': expected 1, obtained 1
+2025-03-26 18:08:55,292 - INFO - PASS: Food removal test for 'Cheeseburger': expected 9, obtained 9
+2025-03-26 18:08:55,295 - INFO - PASS: Food removal test for 'Pizza': expected 4, obtained 4
+2025-03-26 18:08:55,298 - INFO - PASS: Food removal test for 'Lahmacun': expected 2, obtained 2
+2025-03-26 18:08:55,307 - INFO - PASS: Food removal test for 'Köfte': expected 6, obtained 6
+2025-03-26 18:08:55,309 - INFO - PASS: Food removal test for 'Döner': expected 3, obtained 3
+2025-03-26 18:08:55,321 - ERROR - FAIL: Food removal test for 'Hamburger': expected 1, obtained 0
+2025-03-26 18:08:55,438 - ERROR - FAIL: Food removal test for 'Pide': expected 1, obtained 0
+2025-03-26 21:25:09,228 - INFO - PASS: Food selection test for 'Cheeseburger': expected (Cheeseburger, 10), obtained (Cheeseburger, 10)
+2025-03-26 21:25:09,229 - INFO - PASS: Food selection test for 'Pizza': expected (Pizza, 5), obtained (Pizza, 5)
+2025-03-26 21:25:09,231 - INFO - PASS: Food selection test for 'Doner': expected (Doner, 3), obtained (Doner, 3)
+2025-03-26 21:25:44,538 - INFO - PASS: Food selection test for 'Cheeseburger': expected (Cheeseburger, 10), obtained (Cheeseburger, 10)
+2025-03-26 21:25:44,540 - INFO - PASS: Food selection test for 'Pizza': expected (Pizza, 5), obtained (Pizza, 5)
+2025-03-26 21:25:44,541 - INFO - PASS: Food selection test for 'Doner': expected (Doner, 3), obtained (Doner, 3)
+2025-03-26 21:25:44,542 - INFO - PASS: Food selection test for 'Lahmacun': expected (Lahmacun, 7), obtained (Lahmacun, 7)
+2025-03-26 21:25:44,543 - INFO - PASS: Food selection test for 'Burger': expected (Burger, 2), obtained (Burger, 2)
+2025-03-26 21:25:44,544 - INFO - PASS: Food selection test for 'Kebap': expected (Kebap, 4), obtained (Kebap, 4)
+2025-03-26 21:26:00,275 - INFO - PASS: Food selection test for 'Cheeseburger': expected (Cheeseburger, 10), obtained (Cheeseburger, 10)
+2025-03-26 21:26:00,277 - INFO - PASS: Food selection test for 'Pizza': expected (Pizza, 5), obtained (Pizza, 5)
+2025-03-26 21:26:00,278 - INFO - PASS: Food selection test for 'Doner': expected (Doner, 3), obtained (Doner, 3)
+2025-03-26 21:26:00,279 - INFO - PASS: Food selection test for 'Lahmacun': expected (Lahmacun, 7), obtained (Lahmacun, 7)
+2025-03-26 21:26:00,280 - INFO - PASS: Food selection test for 'Burger': expected (Burger, 2), obtained (Burger, 2)
+2025-03-26 21:26:00,281 - INFO - PASS: Food selection test for 'Kebap': expected (Kebap, 4), obtained (Kebap, 4)
+2025-03-26 21:26:00,283 - INFO - PASS: Food selection test for 'Sushi': expected (Sushi, 8), obtained (Sushi, 8)
+2025-03-26 21:26:00,285 - INFO - PASS: Food selection test for 'Taco': expected (Taco, 6), obtained (Taco, 6)
+2025-03-26 21:26:00,286 - INFO - PASS: Food selection test for 'Salad': expected (Salad, 1), obtained (Salad, 1)
