@@ -90,7 +90,9 @@ def getiryemek_restaurant_scrape(address, query):
                     dish_prices.append(dish_price)
 
         df = pd.DataFrame({"Name" : dish_names, "Price" : dish_prices})
-        df.to_csv("./webScraping_TEST/getiryemekSCRAPED.csv")
+        driver.quit()
+        return df
+        #df.to_csv("./webScraping_TEST/getiryemekSCRAPED.csv")
     driver.quit()
             
 

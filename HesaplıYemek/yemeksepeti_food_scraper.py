@@ -47,9 +47,10 @@ def yemeksepeti_food_scrape(address, query):
         dish_prices.append(dish_price)
 
     df = pd.DataFrame({"Name" : dish_names, "Price" : dish_prices})
-
-    df.to_csv("./webScraping_TEST/dishesSCRAPED.csv", index=False)
+    
+    #df.to_csv("./webScraping_TEST/dishesSCRAPED.csv", index=False)
 
     if driver2:
         driver2.quit()
         os._exit(0)
+    return df
